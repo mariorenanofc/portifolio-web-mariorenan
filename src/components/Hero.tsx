@@ -70,7 +70,7 @@ const Hero = () => {
           <div className="w-full md:w-1/2 flex justify-center animate-fade-in">
             <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full relative overflow-hidden border-4 border-primary/30">
               <img 
-                src="/lovable-uploads/2ffc85fc-6ecf-4d01-8c9a-86093e61e342.png" 
+                src="/lovable-uploads/7e555188-c75e-4be9-8d4d-bf7b900900dd.png" 
                 alt="Mário Renan" 
                 className="w-full h-full object-cover"
               />

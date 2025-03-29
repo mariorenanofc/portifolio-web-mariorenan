@@ -1,5 +1,5 @@
 
-import { ArrowDown, GitHub, Linkedin, Mail, Phone } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -39,7 +39,7 @@ const Hero = () => {
                 className="text-gray-700 hover:text-blue-600 transition-colors"
                 aria-label="GitHub"
               >
-                <GitHub size={24} />
+                <Github size={24} />
               </a>
               <a 
                 href="https://linkedin.com/in/mariorenanofc" 

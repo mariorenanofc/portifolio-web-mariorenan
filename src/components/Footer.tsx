@@ -1,5 +1,5 @@
 
-import { GitHub, Linkedin, Mail, Phone, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -35,7 +35,7 @@ const Footer = () => {
               className="text-gray-400 hover:text-blue-400 transition-colors"
               aria-label="GitHub"
             >
-              <GitHub size={20} />
+              <Github size={20} />
             </a>
             <a 
               href="https://linkedin.com/in/mariorenanofc" 

@@ -4,17 +4,17 @@ import { Code, Globe, Server } from 'lucide-react';
 const Services = () => {
   const servicesList = [
     {
-      icon: <Code className="text-blue-600" size={36} />,
+      icon: <Code className="text-primary" size={36} />,
       title: "Desenvolvimento Web",
       description: "Criação de sites e aplicações web modernas, responsivas e de alta performance utilizando as tecnologias mais recentes do mercado."
     },
     {
-      icon: <Globe className="text-blue-600" size={36} />,
+      icon: <Globe className="text-primary" size={36} />,
       title: "Front-End",
       description: "Desenvolvimento de interfaces de usuário atraentes e funcionais utilizando HTML, CSS, JavaScript, React, Vue.js e Next.js."
     },
     {
-      icon: <Server className="text-blue-600" size={36} />,
+      icon: <Server className="text-primary" size={36} />,
       title: "Back-End",
       description: "Criação de APIs robustas e seguras, integração com bancos de dados e implementação de lógica de negócios utilizando Node.js, Java e SQL."
     }
@@ -29,7 +29,7 @@ const Services = () => {
           {servicesList.map((service, index) => (
             <div 
               key={service.title}
-              className="bg-blue-50 rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow animate-slide-up"
+              className="bg-secondary rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow animate-slide-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex flex-col items-center text-center">

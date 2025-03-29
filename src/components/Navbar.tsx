@@ -45,7 +45,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex justify-between items-center">
-        <a href="#home" className="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors">
+        <a href="#home" className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
           Mário<span className="text-gray-800">Renan</span>
         </a>
 
@@ -55,7 +55,7 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              className="text-gray-700 hover:text-primary font-medium transition-colors"
             >
               {link.name}
             </a>
@@ -76,7 +76,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors"
+                className="text-gray-700 hover:text-primary font-medium py-2 transition-colors"
                 onClick={closeMenu}
               >
                 {link.name}

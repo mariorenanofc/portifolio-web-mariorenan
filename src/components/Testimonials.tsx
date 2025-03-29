@@ -42,10 +42,10 @@ const Testimonials = () => {
           {testimonialsList.map((testimonial, index) => (
             <div 
               key={testimonial.name}
-              className="bg-blue-50 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow animate-slide-up relative"
+              className="bg-secondary rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow animate-slide-up relative"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <Quote className="absolute text-blue-200 top-4 right-4" size={40} />
+              <Quote className="absolute text-teal-200 top-4 right-4" size={40} />
               
               <div className="flex items-center mb-4">
                 <div className="flex">

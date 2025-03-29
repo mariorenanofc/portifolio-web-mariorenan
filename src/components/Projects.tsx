@@ -27,7 +27,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="bg-blue-50">
+    <section id="projects" className="bg-secondary">
       <div className="container">
         <h2 className="section-title">Projetos Recentes</h2>
         
@@ -46,7 +46,7 @@ const Projects = () => {
                   {project.tech.map(tech => (
                     <span 
                       key={tech} 
-                      className="text-xs font-medium bg-blue-100 text-blue-600 px-2 py-1 rounded"
+                      className="text-xs font-medium bg-secondary text-primary px-2 py-1 rounded"
                     >
                       {tech}
                     </span>
@@ -58,7 +58,7 @@ const Projects = () => {
                     href={project.github} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-blue-600 transition-colors flex items-center"
+                    className="text-gray-700 hover:text-primary transition-colors flex items-center"
                   >
                     <Github size={18} className="mr-1" /> 
                     <span>GitHub</span>
@@ -67,7 +67,7 @@ const Projects = () => {
                     href={project.live} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-blue-600 transition-colors flex items-center"
+                    className="text-gray-700 hover:text-primary transition-colors flex items-center"
                   >
                     <ExternalLink size={18} className="mr-1" /> 
                     <span>Demo</span>

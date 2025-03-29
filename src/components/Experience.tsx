@@ -8,15 +8,15 @@ const Experience = () => {
         <h2 className="section-title">Experiência Profissional</h2>
         
         <div className="max-w-3xl mx-auto">
-          <div className="relative pl-8 border-l-2 border-blue-200">
+          <div className="relative pl-8 border-l-2 border-teal-200">
             <div className="mb-10 relative animate-slide-up">
-              <div className="absolute -left-[26px] top-0 h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center border-4 border-white shadow-md">
-                <Briefcase className="text-blue-600" size={20} />
+              <div className="absolute -left-[26px] top-0 h-12 w-12 rounded-full bg-secondary flex items-center justify-center border-4 border-white shadow-md">
+                <Briefcase className="text-primary" size={20} />
               </div>
               
               <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow ml-6">
                 <div className="flex items-center mb-2">
-                  <CalendarDays className="text-blue-600 mr-2" size={18} />
+                  <CalendarDays className="text-primary mr-2" size={18} />
                   <span className="text-gray-500">Período não especificado</span>
                 </div>
                 
@@ -28,7 +28,7 @@ const Experience = () => {
                     Durante meu estágio, tive a oportunidade de adquirir experiência em diversos aspectos relacionados à assistência técnica e desenvolvimento de sistemas.
                   </p>
                   
-                  <h4 className="font-medium text-blue-600 mt-4 mb-2">Responsabilidades:</h4>
+                  <h4 className="font-medium text-primary mt-4 mb-2">Responsabilidades:</h4>
                   <ul className="list-disc pl-5 space-y-1 text-gray-600">
                     <li>Realização de manutenção de aparelhos eletrônicos</li>
                     <li>Fornecimento de suporte técnico aos clientes</li>
@@ -39,7 +39,7 @@ const Experience = () => {
                     <li>Colaboração em iniciativas para aumentar a eficiência e qualidade dos serviços</li>
                   </ul>
                   
-                  <h4 className="font-medium text-blue-600 mt-4 mb-2">Realizações:</h4>
+                  <h4 className="font-medium text-primary mt-4 mb-2">Realizações:</h4>
                   <ul className="list-disc pl-5 space-y-1 text-gray-600">
                     <li>Contribuição para melhorias nos processos internos de atendimento ao cliente</li>
                     <li>Participação no desenvolvimento de soluções para otimizar o fluxo de trabalho</li>
@@ -49,7 +49,7 @@ const Experience = () => {
               </div>
             </div>
             
-            <div className="absolute bottom-0 -left-[11px] h-6 w-6 rounded-full bg-blue-600 animate-pulse"></div>
+            <div className="absolute bottom-0 -left-[11px] h-6 w-6 rounded-full bg-primary animate-pulse"></div>
           </div>
         </div>
       </div>

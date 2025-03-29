@@ -59,14 +59,14 @@ const Contact = () => {
             
             <div className="space-y-6">
               <div className="flex items-start">
-                <div className="p-3 bg-blue-100 text-blue-600 rounded-lg mr-4">
+                <div className="p-3 bg-secondary text-primary rounded-lg mr-4">
                   <Mail size={20} />
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-800">Email</h4>
                   <a 
                     href="mailto:MARIOVENDASONLINE10K@GMAIL.COM" 
-                    className="text-blue-600 hover:underline"
+                    className="text-primary hover:underline"
                   >
                     MARIOVENDASONLINE10K@GMAIL.COM
                   </a>
@@ -74,14 +74,14 @@ const Contact = () => {
               </div>
               
               <div className="flex items-start">
-                <div className="p-3 bg-blue-100 text-blue-600 rounded-lg mr-4">
+                <div className="p-3 bg-secondary text-primary rounded-lg mr-4">
                   <Phone size={20} />
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-800">Telefone</h4>
                   <a 
                     href="tel:+5587999061405" 
-                    className="text-blue-600 hover:underline"
+                    className="text-primary hover:underline"
                   >
                     (87) 99906-1405
                   </a>
@@ -89,7 +89,7 @@ const Contact = () => {
               </div>
               
               <div className="flex items-start">
-                <div className="p-3 bg-blue-100 text-blue-600 rounded-lg mr-4">
+                <div className="p-3 bg-secondary text-primary rounded-lg mr-4">
                   <MapPin size={20} />
                 </div>
                 <div>
@@ -100,7 +100,7 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="bg-blue-50 rounded-lg p-6 shadow-md animate-slide-up" style={{ animationDelay: '200ms' }}>
+          <div className="bg-secondary rounded-lg p-6 shadow-md animate-slide-up" style={{ animationDelay: '200ms' }}>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-gray-700 mb-1">Nome</label>
@@ -157,7 +157,7 @@ const Contact = () => {
               
               <Button 
                 type="submit" 
-                className="w-full bg-blue-600 hover:bg-blue-700"
+                className="w-full bg-primary hover:bg-primary/90"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (

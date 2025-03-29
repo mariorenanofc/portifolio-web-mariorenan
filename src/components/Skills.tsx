@@ -39,7 +39,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="bg-blue-50">
+    <section id="skills" className="bg-secondary">
       <div className="container">
         <h2 className="section-title">Minhas Habilidades</h2>
         
@@ -50,11 +50,11 @@ const Skills = () => {
               className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow animate-slide-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">{skillGroup.category}</h3>
+              <h3 className="text-xl font-semibold text-primary mb-4">{skillGroup.category}</h3>
               <ul className="space-y-3">
                 {skillGroup.items.map((item) => (
                   <li key={item} className="flex items-start">
-                    <CheckCircle className="text-blue-600 mr-2 flex-shrink-0 mt-1" size={18} />
+                    <CheckCircle className="text-primary mr-2 flex-shrink-0 mt-1" size={18} />
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}

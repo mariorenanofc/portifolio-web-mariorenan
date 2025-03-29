@@ -63,17 +63,18 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				blue: {
-					50: '#e6f1fe',
-					100: '#cce3fd',
-					200: '#99c7fb',
-					300: '#66abf9',
-					400: '#338ff7',
-					500: '#0073f5',
-					600: '#005cc4',
-					700: '#004593',
-					800: '#002e62',
-					900: '#001731',
+				// Atualizando o esquema de cores para combinações em tons de azul escuro/petróleo
+				teal: {
+					50: '#e6f2f5',
+					100: '#ccdfdf',
+					200: '#99c4cc',
+					300: '#66aab9',
+					400: '#338fa6',
+					500: '#006d83',
+					600: '#005769',
+					700: '#00414f',
+					800: '#002b35',
+					900: '#00161a',
 				}
 			},
 			borderRadius: {

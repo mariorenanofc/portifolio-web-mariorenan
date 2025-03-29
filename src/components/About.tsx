@@ -8,9 +8,9 @@ const About = () => {
         <h2 className="section-title">Sobre Mim</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-blue-50 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow animate-slide-up">
+          <div className="bg-secondary rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow animate-slide-up">
             <div className="flex items-center mb-4">
-              <div className="p-3 bg-blue-600 text-white rounded-lg mr-4">
+              <div className="p-3 bg-primary text-white rounded-lg mr-4">
                 <GraduationCap size={24} />
               </div>
               <h3 className="text-xl font-semibold">Formação</h3>
@@ -33,9 +33,9 @@ const About = () => {
             </ul>
           </div>
           
-          <div className="bg-blue-50 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow animate-slide-up [animation-delay:200ms]">
+          <div className="bg-secondary rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow animate-slide-up [animation-delay:200ms]">
             <div className="flex items-center mb-4">
-              <div className="p-3 bg-blue-600 text-white rounded-lg mr-4">
+              <div className="p-3 bg-primary text-white rounded-lg mr-4">
                 <Briefcase size={24} />
               </div>
               <h3 className="text-xl font-semibold">Experiência</h3>
@@ -55,9 +55,9 @@ const About = () => {
             </div>
           </div>
           
-          <div className="bg-blue-50 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow animate-slide-up [animation-delay:400ms]">
+          <div className="bg-secondary rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow animate-slide-up [animation-delay:400ms]">
             <div className="flex items-center mb-4">
-              <div className="p-3 bg-blue-600 text-white rounded-lg mr-4">
+              <div className="p-3 bg-primary text-white rounded-lg mr-4">
                 <Code size={24} />
               </div>
               <h3 className="text-xl font-semibold">Sobre</h3>

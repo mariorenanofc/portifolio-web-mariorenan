@@ -4,25 +4,25 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects = () => {
   const projectsList = [
     {
-      title: "Portfolio Pessoal",
-      description: "Meu website de portfolio pessoal desenvolvido com React e Tailwind CSS.",
-      tech: ["React", "Tailwind CSS", "Vite"],
-      github: "https://github.com/mariorenanofc/mariorenandev-portifolio",
-      live: "#"
+      title: "Exu Delivery",
+      description: "Plataforma de delivery de comida.",
+      tech: ["Next.js", "Tailwind CSS", "Lucide", "React", "NextAuth.js"],
+      github: "https://github.com/mariorenanofc/fsw-foods",
+      live: "http://exudelivery.vercel.app/"
     },
     {
-      title: "E-commerce Moderno",
-      description: "Uma plataforma de e-commerce com recursos avançados de filtragem e carrinhos de compras.",
-      tech: ["Next.js", "Node.js", "MongoDB"],
-      github: "https://github.com/mariorenanofc",
-      live: "#"
+      title: "Controle Finance AI",
+      description: "Aplicação para controle financeiro com auxílio de IA.",
+      tech: ["Next.js", "React", "Tailwind CSS", "Webpack", "Node.js"], 
+      github: "https://github.com/mariorenanofc/controle-finance-ai",
+      live: "https://controle-finance-ai.vercel.app/login"
     },
     {
-      title: "Dashboard Administrativo",
-      description: "Um dashboard administrativo com visualização de dados e gerenciamento de usuários.",
-      tech: ["Vue.js", "Express", "SQL Server"],
-      github: "https://github.com/mariorenanofc",
-      live: "#"
+      title: "Cardápio Online",
+      description: "Cardápio digital interativo.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      github: "https://github.com/mariorenanofc/cardapio-online",
+      live: "https://mariorenanofc.github.io/cardapio-online/index.html"
     }
   ];
 

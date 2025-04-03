@@ -58,9 +58,10 @@ const Hero = () => {
                 <Mail size={24} />
               </a>
               <a 
-                href="tel:+5587999061405" 
+                href="https://w.app/mariorenanofc" 
+                target="_blank" 
                 className="text-foreground hover:text-primary transition-colors"
-                aria-label="Telefone"
+                aria-label="Whatsapp"
               >
                 <Phone size={24} />
               </a>

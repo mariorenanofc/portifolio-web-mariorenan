@@ -1,69 +1,79 @@
-# Welcome to your Lovable project
+#   Portfólio Web - Mário Renan
 
-## Project info
+    Este é o meu portfólio web pessoal, desenvolvido para apresentar meus projetos, habilidades e experiência em desenvolvimento web. Aqui você encontrará exemplos do meu trabalho, informações sobre minha formação e como entrar em contato.
 
-**URL**: https://lovable.dev/projects/8bc25d50-d289-4906-8b91-13250bdb2d67
+    ##   Sobre o Projeto
 
-## How can I edit this code?
+    Este portfólio foi criado para demonstrar minhas habilidades e projetos como desenvolvedor web. O design e o desenvolvimento foram realizados por mim, utilizando as seguintes tecnologias:
 
-There are several ways of editing your application.
+    * **Front-End:** HTML5, CSS3, JavaScript
+    * **Back-End:** Node.js
+    * **Banco de Dados:** MySQL
+    * **Outras:** \[Aqui você pode adicionar outras tecnologias ou bibliotecas que você usou, se aplicável]
 
-**Use Lovable**
+    O objetivo é fornecer uma visão geral das minhas capacidades e servir como um ponto de contato para potenciais empregadores ou colaboradores.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8bc25d50-d289-4906-8b91-13250bdb2d67) and start prompting.
+    ##   Projetos
 
-Changes made via Lovable will be committed automatically to this repo.
+    \[Aqui você pode adicionar uma seção detalhando seus projetos. Para cada projeto, inclua:]
 
-**Use your preferred IDE**
+    * **Nome do Projeto:** \[Nome do projeto]
+    * **Descrição:** \[Breve descrição do projeto]
+    * **Tecnologias Utilizadas:** \[Lista das tecnologias usadas no projeto]
+    * **Link:** \[Link para o projeto online ou para o repositório do projeto no GitHub]
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+    ##   Habilidades
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+    ###   Front-End
 
-Follow these steps:
+    * HTML5
+    * CSS3
+    * JavaScript
+    * TypeScript [cite: 3]
+    * VueJS [cite: 3]
+    * Next.js [cite: 3]
+    * ReactJS [cite: 8]
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+    ###   Back-End
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+    * Node.js [cite: 2, 8]
+    * Java [cite: 8]
+    * SQL Server [cite: 2, 8]
+    * Postman [cite: 8]
 
-# Step 3: Install the necessary dependencies.
-npm i
+    ###   Banco de Dados
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+    * MySQL [cite: 8]
+    * NoSQL [cite: 8]
 
-**Edit a file directly in GitHub**
+    ###   Outras
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+    * Git
+    * Análise e detalhamento de requisitos [cite: 4]
 
-**Use GitHub Codespaces**
+    ##   Formação
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+    * Graduação em ADS - concluído em 2024 - Universidade Estácio de Sá - UNESA [cite: 5]
+    * POS - Graduação em Desenvolvimento Full Stack - cursando - Universidade Estácio de Sá - UNESA [cite: 5]
+    * Curso técnico em Desenvolvimento de Sistemas - 2024 - ETE [cite: 5]
+    * Curso Profissionalizante em Desenvolvimento de Software - 2023 - Devaria [cite: 5]
 
-## What technologies are used for this project?
+    ##   Experiência Profissional
 
-This project is built with .
+    ###   Infor Bacural - Empresa de Assistência Técnica
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+    * Auxílio em serviços de manutenção de aparelhos eletrônicos [cite: 5, 6, 7]
+    * Suporte ao cliente com manutenção e atualização de sistemas [cite: 5, 6, 7]
+    * Auxílio no desenvolvimento e implementação de novas tecnologias e ferramentas [cite: 6]
+    * Participação em reuniões de projetos para identificar e analisar requisitos [cite: 7]
 
-## How can I deploy this project?
+    ##   Contato
 
-Simply open [Lovable](https://lovable.dev/projects/8bc25d50-d289-4906-8b91-13250bdb2d67) and click on Share -> Publish.
+    * **LinkedIn:** [linkedin.com/in/mariorenanofc](linkedin.com/in/mariorenanofc)
+    * **GitHub:** [https://github.com/mariorenanofc](https://github.com/mariorenanofc)
+    * **E-mail:** [MARIOVENDASONLINE10K@GMAIL.COM](mailto:MARIOVENDASONLINE10K@GMAIL.COM)
+    * **Telefone:** (87) 99906-1405
 
-## I want to use a custom domain - is that possible?
+    ##   Autor
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+    Mário Renan

@@ -56,7 +56,8 @@ const Footer = () => {
               <Mail size={20} />
             </a>
             <a 
-              href="tel:+5587999061405" 
+              href="https://w.app/mariorenanofc" 
+              target="_blank" 
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Telefone"
             >

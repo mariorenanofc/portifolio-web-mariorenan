@@ -93,8 +93,8 @@
   }
   
   .hero-background {
-    @apply bg-black bg-opacity-80;
-    background-image: url('/lovable-uploads/db176cb9-7158-40dd-96df-96483cdf4b8e.png');
+    @apply bg-black bg-opacity-60;
+    background-image: url('/lovable-uploads/2ffc85fc-6ecf-4d01-8c9a-86093e61e342.png');
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;

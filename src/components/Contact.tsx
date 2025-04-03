@@ -66,7 +66,7 @@ const Contact = () => {
                   <h4 className="font-medium text-gray-800">Email</h4>
                   <a 
                     href="mailto:MARIOVENDASONLINE10K@GMAIL.COM" 
-                    className="text-primary hover:underline"
+                    className="text-primary text-xs hover:underline"
                   >
                     MARIOVENDASONLINE10K@GMAIL.COM
                   </a>
@@ -80,7 +80,8 @@ const Contact = () => {
                 <div>
                   <h4 className="font-medium text-gray-800">Telefone</h4>
                   <a 
-                    href="tel:+5587999061405" 
+                    href="https://w.app/mariorenanofc" 
+                    target="_blank"  
                     className="text-primary hover:underline"
                   >
                     (87) 99906-1405

@@ -31,11 +31,8 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Início', href: '#home' },
     { name: 'Sobre', href: '#about' },
-    { name: 'Habilidades', href: '#skills' },
     { name: 'Experiência', href: '#experience' },
-    { name: 'Serviços', href: '#services' },
     { name: 'Projetos', href: '#projects' },
-    { name: 'Depoimentos', href: '#testimonials' },
     { name: 'Contato', href: '#contact' },
   ];
 
@@ -56,7 +53,7 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-foreground hover:text-primary font-medium transition-colors"
+              className="text-blue-400 hover:text-primary font-medium transition-colors"
             >
               {link.name}
             </a>

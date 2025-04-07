@@ -10,10 +10,42 @@ const Experience = () => {
         <div className="max-w-3xl mx-auto">
           <div className="relative pl-8 border-l-2 border-teal-200">
             <div className="mb-10 relative animate-slide-up">
-              <div className="absolute -left-[26px] top-0 h-12 w-12 rounded-full bg-secondary flex items-center justify-center border-4 border-white shadow-md">
+              <div className="absolute -left-[26px] top-0 h-12 w-12 rounded-full bg-orange-00 flex items-center justify-center border-4 border-white shadow-md">
                 <Briefcase className="text-primary" size={20} />
               </div>
-              
+              <div className="bg-orange-200 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow ml-6">
+                <div className="flex items-center mb-2">
+                  <CalendarDays className="text-primary mr-2" size={18} />
+                  <span className="text-gray-500">24 de março - Atualmente</span>
+                </div>
+                
+                <h3 className="text-xl font-semibold text-gray-800">Tutor</h3>
+                <p className="text-gray-600 font-medium">CESAR School - bolsista</p>
+                
+                <div className="mt-4 text-gray-700">
+                  <p className="mb-2">
+                    No processo de estágio, eu estou desenvolvendo habilidades e estrátegias de acompanhar e desenvolver os alunos no programa trilha Tech. Oportunidade de capacitação dos alunos para o mercado de tecnológia.
+                  </p>
+                  
+                  <h4 className="font-medium text-primary mt-4 mb-2">Responsabilidades:</h4>
+                  <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                    <li>Mediar aplicação de instrumentos pedagógicos em sala de aula para facilitar o processo de aprendizem dos alunos.</li>
+                    <li>Realizar a aplicação de instrumentos avaliativos para monitorar o processo acadêmico dos estudantes e identificar áreas de melhorias.</li>
+                    <li>Acompanhar a aplicação de atividades presenciais e no ambiente de sala laboratório, garantindo um ambiente propício ao ensino e aprendizagem.</li>
+                    <li>Acompanhar e coletar dados relevantes do projeto para subsidiar análise tomadas de decisão pela liderança.</li>
+                    <li>Prestar suporte aos estudantes, esclarecendo dúvidas e oferecendo orientação, quando necessário sobre o assunto da aula.</li>
+                    <li>Oferecer suporte técnico para garantir o funcionamento adequado de equipamentos e recursos educacionais</li>
+                    <li>Elaborar relatórios sobre o processo do projeto, incluindo análise de dados e recomendações para melhorias contínuas.</li>
+                  </ul>
+                  
+                  <h4 className="font-medium text-primary mt-4 mb-2">Realizações:</h4>
+                  <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                    <li>Contribuição para melhorias nos processos internos de atendimento ao cliente</li>
+                    <li>Participação no desenvolvimento de soluções para otimizar o fluxo de trabalho</li>
+                    <li>Aprendizado prático de tecnologias utilizadas no mercado</li>
+                  </ul>
+                </div>
+              </div>
               <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow ml-6">
                 <div className="flex items-center mb-2">
                   <CalendarDays className="text-primary mr-2" size={18} />

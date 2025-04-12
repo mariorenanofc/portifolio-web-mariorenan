@@ -1,8 +1,14 @@
 
 import { ArrowDown, Github, Linkedin, Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { generateWhatsAppLink } from '@/lib/utils';
 
 const Hero = () => {
+
+  const heroWhatsappLink = generateWhatsAppLink(
+    '5587999061405',
+    '*Olá Mário!*👋 Gostaria de saber mais sobre seus serviços.'
+  )
   return (
     <section id="home" className="min-h-screen flex items-center justify-center hero-background pt-20">
       <div className="container">
@@ -58,8 +64,9 @@ const Hero = () => {
                 <Mail size={24} />
               </a>
               <a 
-                href="https://w.app/mariorenanofc" 
+                href={heroWhatsappLink} 
                 target="_blank" 
+                rel='noopener noreferrer'
                 className="text-foreground hover:text-primary transition-colors"
                 aria-label="Whatsapp"
               >

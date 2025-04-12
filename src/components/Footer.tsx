@@ -1,4 +1,5 @@
 
+import { generateWhatsAppLink } from '@/lib/utils';
 import { Github, Linkedin, Mail, Phone, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
@@ -8,6 +9,11 @@ const Footer = () => {
       behavior: 'smooth'
     });
   };
+
+  const whatsappLink = generateWhatsAppLink(
+    '5587999061405',
+    '*Olá 👋*, Vim atraves do seu portifolio.'
+  );
 
   return (
     <footer className="bg-card text-foreground py-10">
@@ -21,11 +27,9 @@ const Footer = () => {
           <div className="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
             <a href="#home" className="hover:text-primary transition-colors">Início</a>
             <a href="#about" className="hover:text-primary transition-colors">Sobre</a>
-            <a href="#skills" className="hover:text-primary transition-colors">Habilidades</a>
             <a href="#experience" className="hover:text-primary transition-colors">Experiência</a>
             <a href="#services" className="hover:text-primary transition-colors">Serviços</a>
             <a href="#projects" className="hover:text-primary transition-colors">Projetos</a>
-            <a href="#testimonials" className="hover:text-primary transition-colors">Depoimentos</a>
             <a href="#contact" className="hover:text-primary transition-colors">Contato</a>
           </div>
           
@@ -56,10 +60,11 @@ const Footer = () => {
               <Mail size={20} />
             </a>
             <a 
-              href="https://w.app/mariorenanofc" 
+              href={whatsappLink}
               target="_blank" 
+              rel='noopener noreferrer'
               className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="Telefone"
+              aria-label="Whatsapp"
             >
               <Phone size={20} />
             </a>

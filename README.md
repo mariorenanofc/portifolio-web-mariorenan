@@ -6,10 +6,10 @@
 
     Este portfólio foi criado para demonstrar minhas habilidades e projetos como desenvolvedor web. O design e o desenvolvimento foram realizados por mim, utilizando as seguintes tecnologias:
 
-    * **Front-End:** HTML5, CSS3, JavaScript
-    * **Back-End:** Node.js
-    * **Banco de Dados:** MySQL
-    * **Outras:** \[Aqui você pode adicionar outras tecnologias ou bibliotecas que você usou, se aplicável]
+     **Front-End:** HTML5, CSS3, JavaScript
+     **Back-End:** Node.js
+     **Banco de Dados:** MySQL
+     **Outras:** \[Aqui você pode adicionar outras tecnologias ou bibliotecas que você usou, se aplicável]
 
     O objetivo é fornecer uma visão geral das minhas capacidades e servir como um ponto de contato para potenciais empregadores ou colaboradores.
 
@@ -17,10 +17,10 @@
 
     \[Aqui você pode adicionar uma seção detalhando seus projetos. Para cada projeto, inclua:]
 
-    * **Nome do Projeto:** \[Nome do projeto]
-    * **Descrição:** \[Breve descrição do projeto]
-    * **Tecnologias Utilizadas:** \[Lista das tecnologias usadas no projeto]
-    * **Link:** \[Link para o projeto online ou para o repositório do projeto no GitHub]
+     **Nome do Projeto:** \[Nome do projeto]
+     **Descrição:** \[Breve descrição do projeto]
+     **Tecnologias Utilizadas:** \[Lista das tecnologias usadas no projeto]
+     **Link:** \[Link para o projeto online ou para o repositório do projeto no GitHub]
 
     ##   Habilidades
 

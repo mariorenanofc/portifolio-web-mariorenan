@@ -58,9 +58,10 @@ const About = () => {
                 <ul className="list-disc ml-5 mt-2 text-gray-600">
                   <li>Monitorar a avaliar os alunos do curso</li>
                   <li>Suporte aos alunos com suas dúvidas sobre o conteúdo</li>
-                  <li>Garantir que o conteúdo da aual seja presentado para os alunos</li>
-                  <li>Aplicar desafios e peuqenos projetos para avaliar o aprendizado dos alunos.</li>
-                  <li>Análise de requisitos</li>
+                  <li>Garantir que o conteúdo da aula seja apresentado para os alunos</li>
+                  <li>Aplicar desafios e pequenos projetos para avaliar o aprendizado dos alunos.</li>
+                  <li>Análise constinua de aprendizado individual de cada aluno.</li>
+                  <li>Levantamento de dados dos alunos ao decorrer do projeto.</li>
                 </ul>
               </div>
             </div>

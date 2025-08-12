@@ -103,4 +103,33 @@
   .glass-card {
     @apply bg-card/30 backdrop-blur-md border border-border/20 shadow-xl;
   }
+
+  .project-card {
+    @apply bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105;
+    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--card)/0.8));
+    border: 1px solid hsl(var(--border)/0.2);
+  }
+
+  .project-card:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  }
+
+  .tech-tag {
+    @apply px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-110;
+  }
+
+  .icon-hover {
+    @apply transition-all duration-300 hover:scale-125 hover:rotate-12 hover:text-primary;
+  }
+
+  .shimmer-effect {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    background-size: 200px 100%;
+    animation: shimmer 2s infinite;
+  }
 }

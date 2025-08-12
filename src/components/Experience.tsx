@@ -8,9 +8,10 @@ const Experience = () => {
       <div className="container">
         <h2 className="section-title">Experiência Profissional</h2>
 
-        <div className="max-w-3xl mx-auto">
-          {/* Linha do tempo */}
-          <div className="relative pl-8 border-l-2 border-teal-200">
+        <div className="overflow-hidden">
+          <div className="flex gap-8 animate-scroll-horizontal-experience pb-4">
+            {/* Timeline container */}
+            <div className="relative pl-8 border-l-2 border-teal-200 min-w-[800px] flex flex-col">
             {/* --- Experiência Tutor CESAR School --- */}
             <div
               className="mb-10 relative animate-slide-up"
@@ -216,8 +217,9 @@ const Experience = () => {
             </div>
             {/* --- Fim Experiência Americanas S.A. --- */}
 
-            {/* Ponto final da linha do tempo */}
-            <div className="absolute bottom-0 -left-[11px] h-6 w-6 rounded-full bg-primary animate-pulse"></div>
+              {/* Ponto final da linha do tempo */}
+              <div className="absolute bottom-0 -left-[11px] h-6 w-6 rounded-full bg-primary animate-pulse"></div>
+            </div>
           </div>
         </div>
       </div>

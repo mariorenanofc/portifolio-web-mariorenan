@@ -37,7 +37,7 @@ const Projects = () => {
       title: "O Esperto Comparador",
       description: "Plataforma de comparação de preços em supermercados para economizar nas compras.",
       tech: ["React", "TypeScript", "Tailwind CSS", "Lovable", "Web APIs"],
-      github: "https://github.com/mariorenanofc/comparador-precos",
+      github: "https://github.com/mariorenanofc/o-esperto-comparador",
       live: "https://preview--o-esperto-comparador.lovable.app/",
       icon: Search,
       gradient: "from-purple-500 to-pink-500"
@@ -71,17 +71,18 @@ const Projects = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectsList.map((project, index) => {
-            const Icon = project.icon;
-            return (
-              <div 
-                key={project.title}
-                className="group relative project-card animate-scale-in"
-                style={{ animationDelay: `${index * 150}ms` }}
-                onMouseEnter={() => setHoveredProject(index)}
-                onMouseLeave={() => setHoveredProject(null)}
-              >
+        <div className="overflow-hidden">
+          <div className="flex gap-8 animate-scroll-horizontal pb-4">
+            {projectsList.map((project, index) => {
+              const Icon = project.icon;
+              return (
+                <div 
+                  key={project.title}
+                  className="group relative project-card animate-slide-in-right min-w-[350px] md:min-w-[400px]"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                  onMouseEnter={() => setHoveredProject(index)}
+                  onMouseLeave={() => setHoveredProject(null)}
+                >
                 {/* Shimmer effect */}
                 <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
@@ -145,6 +146,7 @@ const Projects = () => {
               </div>
             );
           })}
+          </div>
         </div>
 
         {/* Call to action */}

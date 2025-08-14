@@ -45,9 +45,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="bg-secondary relative overflow-hidden">
-      {/* Skills Background Animation */}
-      <div className="skills-float"></div>
+    <section id="skills" className="bg-secondary">
       <div className="container">
         <h2 className="section-title">Minhas Habilidades</h2>
         

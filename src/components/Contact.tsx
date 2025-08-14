@@ -52,9 +52,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-white relative overflow-hidden">
-      {/* Contact Background Animation */}
-      <div className="contact-network"></div>
+    <section id="contact" className="bg-white">
       <div className="container">
         <h2 className="section-title">Entre em Contato</h2>
 

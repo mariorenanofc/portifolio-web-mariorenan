@@ -62,9 +62,6 @@ const Projects = () => {
 
   return (
     <section id="projects" className="bg-secondary/50 backdrop-blur-sm relative overflow-hidden">
-      {/* Projects Background Animation */}
-      <div className="projects-grid"></div>
-      
       {/* Background animated shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full animate-float"></div>

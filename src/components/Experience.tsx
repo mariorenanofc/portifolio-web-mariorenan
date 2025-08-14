@@ -1,4 +1,5 @@
 import { CalendarDays, Briefcase } from "lucide-react";
+import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 
 const Experience = () => {
   return (
@@ -8,19 +9,15 @@ const Experience = () => {
       <div className="container">
         <h2 className="section-title">Experiência Profissional</h2>
 
-        <div className="overflow-hidden">
-          <div className="flex gap-8 animate-scroll-horizontal-experience pb-4">
-            {/* Timeline container */}
-            <div className="relative pl-8 border-l-2 border-teal-200 min-w-[800px] flex flex-col">
+        <ScrollArea className="w-full whitespace-nowrap">
+          <div className="flex gap-8 pb-4">
+            {/* Experience Cards */}
             {/* --- Experiência Tutor CESAR School --- */}
-            <div
-              className="mb-10 relative animate-slide-up"
-              style={{ animationDelay: "100ms" }}
-            >
-              <div className="absolute -left-[26px] top-0 h-12 w-12 rounded-full bg-orange-100 flex items-center justify-center border-4 border-white shadow-md">
-                <Briefcase className="text-primary" size={20} />
-              </div>
-              <div className="bg-orange-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow ml-6">
+            <div className="min-w-[400px] animate-fade-in" style={{ animationDelay: "100ms" }}>
+              <div className="bg-orange-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow relative">
+                <div className="absolute -top-3 left-6 h-12 w-12 rounded-full bg-orange-100 flex items-center justify-center border-4 border-white shadow-md">
+                  <Briefcase className="text-primary" size={20} />
+                </div>
                 <div className="flex items-center mb-2">
                   <CalendarDays className="text-primary mr-2" size={18} />
                   <span className="text-sm text-gray-500">
@@ -84,16 +81,11 @@ const Experience = () => {
             {/* --- Fim Experiência Tutor --- */}
 
             {/* --- Experiência Freelancer --- */}
-            <div
-              className="mb-10 relative animate-slide-up"
-              style={{ animationDelay: "200ms" }}
-            >
-              {/* Ícone (mantido) */}
-              <div className="absolute -left-[26px] top-0 h-12 w-12 rounded-full bg-red-100 flex items-center justify-center border-4 border-white shadow-md">
-                <Briefcase className="text-primary" size={20} />
-              </div>
-              {/* Card da Experiência (Modificado) */}
-              <div className="bg-red-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow ml-6">
+            <div className="min-w-[400px] animate-fade-in" style={{ animationDelay: "200ms" }}>
+              <div className="bg-red-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow relative">
+                <div className="absolute -top-3 left-6 h-12 w-12 rounded-full bg-red-100 flex items-center justify-center border-4 border-white shadow-md">
+                  <Briefcase className="text-primary" size={20} />
+                </div>
                 <div className="flex items-center mb-2">
                   <CalendarDays className="text-primary mr-2" size={18} />
                   {/* Você pode ajustar o período se souber quando atuou como freelancer */}
@@ -145,13 +137,11 @@ const Experience = () => {
             {/* --- Fim Experiência Freelancer --- */}
 
             {/* --- Experiência Americanas S.A. --- */}
-            <div className="mb-10 relative animate-slide-up">
-              {/* Ícone na linha do tempo */}
-              <div className="absolute -left-[26px] top-0 h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center border-4 border-white shadow-md">
-                <Briefcase className="text-primary" size={20} />
-              </div>
-              {/* Card da Experiência */}
-              <div className="bg-blue-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow ml-6">
+            <div className="min-w-[400px] animate-fade-in" style={{ animationDelay: "300ms" }}>
+              <div className="bg-blue-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow relative">
+                <div className="absolute -top-3 left-6 h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center border-4 border-white shadow-md">
+                  <Briefcase className="text-primary" size={20} />
+                </div>
                 {/* Data */}
                 <div className="flex items-center mb-2">
                   <CalendarDays className="text-primary mr-2" size={18} />
@@ -216,12 +206,9 @@ const Experience = () => {
               </div>
             </div>
             {/* --- Fim Experiência Americanas S.A. --- */}
-
-              {/* Ponto final da linha do tempo */}
-              <div className="absolute bottom-0 -left-[11px] h-6 w-6 rounded-full bg-primary animate-pulse"></div>
-            </div>
           </div>
-        </div>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
       </div>
     </section>
   );

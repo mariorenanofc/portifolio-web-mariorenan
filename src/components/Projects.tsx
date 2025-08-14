@@ -1,6 +1,7 @@
 
 import { ExternalLink, Github, ShoppingCart, Calculator, BookOpen, Search, User } from 'lucide-react';
 import { useState } from 'react';
+import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
@@ -71,14 +72,14 @@ const Projects = () => {
           </p>
         </div>
         
-        <div className="overflow-hidden">
-          <div className="flex gap-8 animate-scroll-horizontal pb-4">
+        <ScrollArea className="w-full whitespace-nowrap">
+          <div className="flex gap-8 pb-4">
             {projectsList.map((project, index) => {
               const Icon = project.icon;
               return (
                 <div 
                   key={project.title}
-                  className="group relative project-card animate-slide-in-right min-w-[350px] md:min-w-[400px]"
+                  className="group relative project-card animate-fade-in min-w-[350px] md:min-w-[400px]"
                   style={{ animationDelay: `${index * 200}ms` }}
                   onMouseEnter={() => setHoveredProject(index)}
                   onMouseLeave={() => setHoveredProject(null)}
@@ -147,7 +148,8 @@ const Projects = () => {
             );
           })}
           </div>
-        </div>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
 
         {/* Call to action */}
         <div className="text-center mt-16">

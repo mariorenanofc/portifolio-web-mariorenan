@@ -9,9 +9,9 @@ import {
 
 const Experience = () => {
   return (
-    <section id="experience" className="bg-white">
-      {" "}
-      {/* Mudado para experience */}
+    <section id="experience" className="bg-white relative overflow-hidden">
+      {/* Experience Background Animation */}
+      <div className="experience-timeline"></div>
       <div className="container">
         <h2 className="section-title">Experiência Profissional</h2>
 

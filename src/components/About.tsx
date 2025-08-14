@@ -2,7 +2,9 @@ import { GraduationCap, Briefcase, Code } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="bg-white">
+    <section id="about" className="bg-white relative overflow-hidden">
+      {/* About Background Animation */}
+      <div className="about-waves"></div>
       <div className="container">
         <h2 className="section-title">Sobre Mim</h2>
 

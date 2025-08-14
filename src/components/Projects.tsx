@@ -1,7 +1,13 @@
 
 import { ExternalLink, Github, ShoppingCart, Calculator, BookOpen, Search, User } from 'lucide-react';
 import { useState } from 'react';
-import { ScrollArea, ScrollBar } from "./ui/scroll-area";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
@@ -72,92 +78,100 @@ const Projects = () => {
           </p>
         </div>
         
-        <ScrollArea className="w-full whitespace-nowrap">
-          <div className="flex gap-8 pb-4">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-7xl mx-auto"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
             {projectsList.map((project, index) => {
               const Icon = project.icon;
               return (
-                <div 
-                  key={project.title}
-                  className="group relative project-card animate-fade-in min-w-[350px] md:min-w-[400px]"
-                  style={{ animationDelay: `${index * 200}ms` }}
-                  onMouseEnter={() => setHoveredProject(index)}
-                  onMouseLeave={() => setHoveredProject(null)}
-                >
-                {/* Shimmer effect */}
-                <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Gradient border on hover */}
-                <div className={`absolute -inset-0.5 bg-gradient-to-r ${project.gradient} rounded-xl opacity-0 group-hover:opacity-75 blur transition-all duration-500 group-hover:blur-sm`}></div>
-                
-                <div className="relative bg-card rounded-xl p-6 h-full flex flex-col">
-                  {/* Icon header with animation */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`p-3 rounded-lg bg-gradient-to-r ${project.gradient} text-white transform transition-all duration-300 ${hoveredProject === index ? 'scale-110 rotate-12' : ''}`}>
-                      <Icon size={24} />
-                    </div>
-                    <div className="text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      #{index + 1}
-                    </div>
-                  </div>
+                <CarouselItem key={project.title} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                  <div 
+                    className="group relative project-card animate-fade-in h-full"
+                    style={{ animationDelay: `${index * 200}ms` }}
+                    onMouseEnter={() => setHoveredProject(index)}
+                    onMouseLeave={() => setHoveredProject(null)}
+                  >
+                    {/* Shimmer effect */}
+                    <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    {/* Gradient border on hover */}
+                    <div className={`absolute -inset-0.5 bg-gradient-to-r ${project.gradient} rounded-xl opacity-0 group-hover:opacity-75 blur transition-all duration-500 group-hover:blur-sm`}></div>
+                    
+                    <div className="relative bg-card rounded-xl p-4 md:p-6 h-full flex flex-col">
+                      {/* Icon header with animation */}
+                      <div className="flex items-center justify-between mb-4">
+                        <div className={`p-2 md:p-3 rounded-lg bg-gradient-to-r ${project.gradient} text-white transform transition-all duration-300 ${hoveredProject === index ? 'scale-110 rotate-12' : ''}`}>
+                          <Icon size={20} className="md:w-6 md:h-6" />
+                        </div>
+                        <div className="text-xs md:text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          #{index + 1}
+                        </div>
+                      </div>
 
-                  <h3 className="text-xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground mb-6 flex-grow leading-relaxed">
-                    {project.description}
-                  </p>
-                  
-                  {/* Tech stack with enhanced styling */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech, techIndex) => (
-                      <span 
-                        key={tech} 
-                        className="tech-tag"
-                        style={{ animationDelay: `${(index * 150) + (techIndex * 50)}ms` }}
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                      <h3 className="text-lg md:text-xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                        {project.title}
+                      </h3>
+                      
+                      <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-6 flex-grow leading-relaxed">
+                        {project.description}
+                      </p>
+                      
+                      {/* Tech stack with enhanced styling */}
+                      <div className="flex flex-wrap gap-1 md:gap-2 mb-4 md:mb-6">
+                        {project.tech.map((tech, techIndex) => (
+                          <span 
+                            key={tech} 
+                            className="tech-tag text-xs md:text-sm"
+                            style={{ animationDelay: `${(index * 150) + (techIndex * 50)}ms` }}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      {/* Action buttons with hover effects */}
+                      <div className="flex flex-col sm:flex-row gap-2 md:gap-4 mt-auto">
+                        <a 
+                          href={project.github} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2 px-3 md:px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm md:text-base"
+                        >
+                          <Github size={16} className="md:w-[18px] md:h-[18px] icon-hover" /> 
+                          <span className="font-medium">GitHub</span>
+                        </a>
+                        <a 
+                          href={project.live} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2 px-3 md:px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/25 text-sm md:text-base"
+                        >
+                          <ExternalLink size={16} className="md:w-[18px] md:h-[18px] icon-hover" /> 
+                          <span className="font-medium">Demo</span>
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  
-                  {/* Action buttons with hover effects */}
-                  <div className="flex gap-4 mt-auto">
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-                    >
-                      <Github size={18} className="icon-hover" /> 
-                      <span className="font-medium">GitHub</span>
-                    </a>
-                    <a 
-                      href={project.live} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
-                    >
-                      <ExternalLink size={18} className="icon-hover" /> 
-                      <span className="font-medium">Demo</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-          </div>
-          <ScrollBar orientation="horizontal" />
-        </ScrollArea>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
 
         {/* Call to action */}
-        <div className="text-center mt-16">
-          <div className="inline-block p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl backdrop-blur-sm border border-primary/20 animate-glow">
-            <p className="text-lg font-medium mb-4">Interessado em colaborar?</p>
+        <div className="text-center mt-12 md:mt-16">
+          <div className="inline-block p-4 md:p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl backdrop-blur-sm border border-primary/20 animate-glow">
+            <p className="text-base md:text-lg font-medium mb-3 md:mb-4">Interessado em colaborar?</p>
             <a 
               href="#contact" 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+              className="inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm md:text-base"
             >
               Vamos conversar!
             </a>

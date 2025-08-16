@@ -21,8 +21,8 @@ const Hero = () => {
       </div>
       
       <div className="container relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
-          <div className="w-full lg:w-1/2 space-y-8 animate-slide-up-fade glass-card p-10 rounded-3xl">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+          <div className="order-2 lg:order-1 w-full lg:w-1/2 space-y-6 lg:space-y-8 animate-slide-up-fade glass-card p-6 lg:p-10 rounded-3xl">
             <div className="space-y-2">
               <h2 className="text-cyber font-semibold text-xl md:text-2xl animate-text-glow font-display tracking-wide">
                 🚀 Desenvolvedor Full Stack
@@ -30,7 +30,7 @@ const Hero = () => {
               <div className="w-20 h-1 bg-gradient-primary rounded-full"></div>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-display">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight font-display">
               Olá, eu sou<br />
               <span className="bg-gradient-primary bg-clip-text text-transparent animate-text-glow relative">
                 Mário Renan
@@ -38,29 +38,29 @@ const Hero = () => {
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl animate-fade-in font-light" style={{ animationDelay: '600ms' }}>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl animate-fade-in font-light" style={{ animationDelay: '600ms' }}>
               Transformo <span className="text-primary font-semibold">ideias inovadoras</span> em 
               <span className="text-cyber font-semibold"> soluções digitais extraordinárias</span>. 
               Especialista em criar experiências que <span className="text-gold font-semibold">impressionam</span>.
             </p>
             
-            <div className="flex flex-wrap gap-6 animate-scale-up" style={{ animationDelay: '800ms' }}>
-              <a href="#contact">
-                <Button className="btn-premium text-lg px-8 py-4 font-semibold tracking-wide">
+            <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 animate-scale-up" style={{ animationDelay: '800ms' }}>
+              <a href="#contact" className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto btn-premium text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 font-semibold tracking-wide">
                   🎯 Vamos conversar
                 </Button>
               </a>
-              <a href="#projects">
+              <a href="#projects" className="w-full sm:w-auto">
                 <Button 
                   variant="outline" 
-                  className="bg-transparent border-2 border-primary/30 text-primary hover:bg-primary/10 hover:border-primary backdrop-blur-sm text-lg px-8 py-4 font-semibold tracking-wide transition-all duration-500 hover:shadow-glow"
+                  className="w-full sm:w-auto bg-transparent border-2 border-primary/30 text-primary hover:bg-primary/10 hover:border-primary backdrop-blur-sm text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 font-semibold tracking-wide transition-all duration-500 hover:shadow-glow"
                 >
                   ⚡ Ver projetos
                 </Button>
               </a>
             </div>
             
-            <div className="flex gap-6 pt-8 animate-slide-up" style={{ animationDelay: '1000ms' }}>
+            <div className="flex gap-3 sm:gap-4 lg:gap-6 pt-6 lg:pt-8 animate-slide-up justify-center lg:justify-start" style={{ animationDelay: '1000ms' }}>
               {[
                 { 
                   href: "https://github.com/mariorenanofc", 
@@ -92,25 +92,27 @@ const Hero = () => {
                   href={href} 
                   target={href.startsWith('http') ? "_blank" : undefined}
                   rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
-                  className={`group relative p-4 rounded-xl bg-card/20 backdrop-blur-sm border border-white/10 text-muted-foreground ${color} transition-all duration-500 transform hover:scale-110 hover:-translate-y-2`}
+                  className={`group relative p-2 sm:p-3 lg:p-4 rounded-xl bg-card/20 backdrop-blur-sm border border-white/10 text-muted-foreground ${color} transition-all duration-500 transform hover:scale-110 hover:-translate-y-2`}
                   aria-label={label}
                   style={{ animationDelay: `${1000 + (index * 100)}ms` }}
                 >
-                  <Icon size={28} className="transition-all duration-300 group-hover:drop-shadow-glow" />
+                  <Icon size={20} className="sm:hidden transition-all duration-300 group-hover:drop-shadow-glow" />
+                  <Icon size={24} className="hidden sm:block lg:hidden transition-all duration-300 group-hover:drop-shadow-glow" />
+                  <Icon size={28} className="hidden lg:block transition-all duration-300 group-hover:drop-shadow-glow" />
                   <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-300"></div>
                 </a>
               ))}
             </div>
           </div>
           
-          <div className="w-full lg:w-1/2 flex justify-center animate-scale-up" style={{ animationDelay: '400ms' }}>
+          <div className="order-1 lg:order-2 w-full lg:w-1/2 flex justify-center animate-scale-up" style={{ animationDelay: '400ms' }}>
             <div className="relative group">
               {/* Animated rings */}
-              <div className="absolute inset-0 w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full border border-primary/20 animate-spin"></div>
-              <div className="absolute inset-4 w-72 h-72 md:w-88 md:h-88 lg:w-[24rem] lg:h-[24rem] rounded-full border border-cyber/20 animate-spin" style={{ animationDirection: 'reverse', animationDuration: '8s' }}></div>
+              <div className="absolute inset-0 w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full border border-primary/20 animate-spin"></div>
+              <div className="absolute inset-2 w-44 h-44 sm:w-52 sm:h-52 md:w-68 md:h-68 lg:w-76 lg:h-76 xl:w-88 xl:h-88 rounded-full border border-cyber/20 animate-spin" style={{ animationDirection: 'reverse', animationDuration: '8s' }}></div>
               
               {/* Main image container */}
-              <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full overflow-hidden">
                 {/* Gradient border */}
                 <div className="absolute -inset-2 bg-gradient-primary rounded-full opacity-75 animate-pulse-glow"></div>
                 

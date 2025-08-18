@@ -25,6 +25,13 @@ const About = () => {
             <div className="space-y-6">
               {[
                 {
+                  title: "Formação Intensiva Privada Full Stack",
+                  institution: "Full Stack Club",
+                  year: "2025",
+                  color: "bg-cyber",
+                  status: "Em andamento"
+                },
+                {
                   title: "Pós-Graduação em Desenvolvimento Full Stack",
                   institution: "Universidade Estácio de Sá (UNESA)",
                   year: "2025",
@@ -47,9 +54,16 @@ const About = () => {
                   <div className={`absolute -left-2 top-0 w-4 h-4 ${item.color} rounded-full animate-pulse`}></div>
                   <h4 className="font-bold text-foreground text-lg mb-2">{item.title}</h4>
                   <p className="text-muted-foreground font-medium">{item.institution}</p>
-                  <span className="inline-block mt-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-                    {item.year}
-                  </span>
+                  <div className="flex gap-2 mt-2">
+                    <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold">
+                      {item.year}
+                    </span>
+                    {item.status && (
+                      <span className="inline-block px-3 py-1 bg-cyber/10 text-cyber rounded-full text-sm font-semibold">
+                        {item.status}
+                      </span>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>

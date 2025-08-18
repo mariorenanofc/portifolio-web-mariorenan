@@ -1,4 +1,4 @@
-import { CalendarDays, Briefcase } from "lucide-react";
+import { CalendarDays, Briefcase, MapPin } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -8,12 +8,77 @@ import {
 } from "./ui/carousel";
 
 const Experience = () => {
+  const experiences = [
+    {
+      title: "Tutor Especialista",
+      company: "CESAR School",
+      location: "Trilha Tech - Bolsista",
+      period: "Mar 2024 - Atualmente",
+      color: "from-primary/10 to-cyber/10",
+      borderColor: "border-primary/20",
+      iconBg: "bg-gradient-primary",
+      description: "Desenvolvendo habilidades estratégicas de acompanhamento e capacitação no programa Trilha Tech, uma oportunidade de formação para o mercado de tecnologia.",
+      responsibilities: [
+        "Mediação de instrumentos pedagógicos para facilitar aprendizagem",
+        "Aplicação de instrumentos avaliativos para monitoramento acadêmico",
+        "Acompanhamento de atividades presenciais e em laboratório",
+        "Coleta e análise de dados para tomada de decisão",
+        "Suporte técnico e educacional aos estudantes",
+        "Elaboração de relatórios de progresso e recomendações"
+      ]
+    },
+    {
+      title: "Desenvolvedor Freelancer",
+      company: "Projetos Diversos",
+      location: "Atuação Remota",
+      period: "Atuação Freelancer",
+      color: "from-cyber/10 to-gold/10",
+      borderColor: "border-cyber/20",
+      iconBg: "bg-gradient-cyber",
+      description: "Desenvolvimento de soluções web personalizadas, focando em aplicações front-end e back-end funcionais e eficientes para diversos clientes.",
+      responsibilities: [
+        "Desenvolvimento de websites e aplicações responsivas",
+        "Criação e manutenção de APIs RESTful",
+        "Integração com bancos de dados relacionais e NoSQL",
+        "Levantamento de requisitos junto aos clientes",
+        "Gerenciamento de projetos e prazos",
+        "Desenvolvimento de e-commerce (Bunito Burgues)",
+        "Otimização de performance e resolução técnica"
+      ]
+    },
+    {
+      title: "Supervisor de Departamento",
+      company: "Americanas S.A.",
+      location: "Exu, Pernambuco",
+      period: "Mar 2023 - Mar 2025",
+      color: "from-gold/10 to-primary/10",
+      borderColor: "border-gold/20",
+      iconBg: "bg-gradient-gold",
+      description: "Liderança e coordenação de operações em diferentes setores, garantindo funcionamento eficiente e desenvolvimento de equipes para atender expectativas dos clientes.",
+      responsibilities: [
+        "Supervisão e orientação de equipes multidepartamentais",
+        "Otimização de processos e estratégias de vendas",
+        "Garantia da excelência no atendimento ao cliente",
+        "Monitoramento de performance e identificação de treinamentos",
+        "Gestão de situações desafiadoras e motivação de equipes",
+        "Comunicação eficaz entre gerência e colaboradores",
+        "Manutenção da integridade organizacional dos departamentos"
+      ]
+    }
+  ];
+
   return (
-    <section id="experience" className="bg-white">
-      {" "}
-      {/* Mudado para experience */}
-      <div className="container">
-        <h2 className="section-title">Experiência Profissional</h2>
+    <section id="experience" className="relative bg-background overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-32 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-float-random"></div>
+        <div className="absolute bottom-32 right-10 w-80 h-80 bg-cyber/5 rounded-full blur-3xl animate-float-random" style={{ animationDelay: '3s' }}></div>
+      </div>
+
+      <div className="container relative">
+        <h2 className="section-title">
+          💼 Experiência <span className="text-primary">Profissional</span>
+        </h2>
 
         <Carousel
           opts={{
@@ -23,191 +88,73 @@ const Experience = () => {
           className="w-full max-w-7xl mx-auto"
         >
           <CarouselContent className="-ml-2 md:-ml-4">
-            {/* --- Experiência Tutor CESAR School --- */}
-            <CarouselItem className="pl-2 md:pl-4 basis-full lg:basis-1/2">
-              <div className="animate-fade-in h-full" style={{ animationDelay: "100ms" }}>
-                <div className="bg-orange-100 rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow relative h-full">
-                  <div className="absolute -top-3 left-4 md:left-6 h-10 w-10 md:h-12 md:w-12 rounded-full bg-orange-100 flex items-center justify-center border-4 border-white shadow-md">
-                    <Briefcase className="text-primary" size={18} />
-                  </div>
-                  <div className="flex items-center mb-2">
-                    <CalendarDays className="text-primary mr-2" size={16} />
-                    <span className="text-xs md:text-sm text-gray-500">
-                      Mar 2024 - Atualmente
-                    </span>
-                  </div>
+            {experiences.map((exp, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full lg:basis-1/2 xl:basis-1/3">
+                <div 
+                  className="animate-slide-up-fade h-full" 
+                  style={{ animationDelay: `${(index + 1) * 150}ms` }}
+                >
+                  <div className={`glass-card rounded-3xl p-6 lg:p-8 transition-all duration-500 hover:scale-105 border-2 ${exp.borderColor} bg-gradient-to-br ${exp.color} h-full flex flex-col`}>
+                    {/* Header */}
+                    <div className="flex items-start gap-4 mb-6">
+                      <div className={`p-3 ${exp.iconBg} rounded-2xl flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                        <Briefcase size={24} className="text-primary-foreground" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-xl lg:text-2xl font-bold text-foreground mb-2 font-display">
+                          {exp.title}
+                        </h3>
+                        <p className="text-primary font-semibold text-lg mb-1">
+                          {exp.company}
+                        </p>
+                        <div className="flex items-center gap-2 text-muted-foreground text-sm mb-2">
+                          <MapPin size={14} />
+                          <span>{exp.location}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-muted-foreground text-sm">
+                          <CalendarDays size={14} />
+                          <span>{exp.period}</span>
+                        </div>
+                      </div>
+                    </div>
 
-                  <h3 className="text-lg md:text-xl font-semibold text-gray-800">Tutor</h3>
-                  <p className="text-sm md:text-base text-gray-600 font-medium">
-                    CESAR School - bolsista
-                  </p>
+                    {/* Description */}
+                    <div className="mb-6 flex-grow">
+                      <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
+                        {exp.description}
+                      </p>
+                    </div>
 
-                  <div className="mt-4 text-gray-700 text-xs md:text-sm">
-                    <p className="mb-3 leading-relaxed">
-                      No processo de estágio, estou desenvolvendo habilidades e
-                      estratégias de acompanhar e desenvolver os alunos no
-                      programa Trilha Tech, uma oportunidade de capacitação para o
-                      mercado de tecnologia.
-                    </p>
-
-                    <h4 className="font-semibold text-primary mt-4 mb-2">
-                      Responsabilidades:
-                    </h4>
-                    <ul className="list-disc pl-4 md:pl-5 space-y-1 text-gray-600 text-xs md:text-sm">
-                      <li>
-                        Mediar aplicação de instrumentos pedagógicos para
-                        facilitar a aprendizagem.
-                      </li>
-                      <li>
-                        Aplicar instrumentos avaliativos para monitorar o
-                        progresso acadêmico.
-                      </li>
-                      <li>Acompanhar atividades presenciais e em laboratório.</li>
-                      <li>
-                        Coletar dados relevantes do projeto para análise e tomada
-                        de decisão.
-                      </li>
-                      <li>
-                        Prestar suporte aos estudantes, esclarecendo dúvidas sobre
-                        o conteúdo.
-                      </li>
-                      <li>
-                        Oferecer suporte técnico para equipamentos e recursos
-                        educacionais.
-                      </li>
-                      <li>
-                        Elaborar relatórios sobre o progresso do projeto e
-                        recomendações.
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </CarouselItem>
-
-            {/* --- Experiência Freelancer --- */}
-            <CarouselItem className="pl-2 md:pl-4 basis-full lg:basis-1/2">
-              <div className="animate-fade-in h-full" style={{ animationDelay: "200ms" }}>
-                <div className="bg-red-100 rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow relative h-full">
-                  <div className="absolute -top-3 left-4 md:left-6 h-10 w-10 md:h-12 md:w-12 rounded-full bg-red-100 flex items-center justify-center border-4 border-white shadow-md">
-                    <Briefcase className="text-primary" size={18} />
-                  </div>
-                  <div className="flex items-center mb-2">
-                    <CalendarDays className="text-primary mr-2" size={16} />
-                    <span className="text-xs md:text-sm text-gray-500">
-                       Atuação Freelancer
-                    </span>
-                  </div>
-
-                  <h3 className="text-lg md:text-xl font-semibold text-gray-800">
-                    Desenvolvedor Freelancer
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-600 font-medium">Projetos Diversos</p>
-
-                  <div className="mt-4 text-gray-700 text-xs md:text-sm">
-                    <p className="mb-3 leading-relaxed">
-                      Atuo como desenvolvedor freelancer, criando soluções web
-                      personalizadas para diversos clientes. Foco em
-                      desenvolvimento front-end e back-end, entregando projetos
-                      funcionais e eficientes.
-                    </p>
-
-                    <h4 className="font-semibold text-primary mt-4 mb-2">
-                      Principais Atividades:
-                    </h4>
-                    <ul className="list-disc pl-4 md:pl-5 space-y-1 text-gray-600 text-xs md:text-sm">
-                      <li>
-                        Desenvolvimento de websites e aplicações web responsivas.
-                      </li>
-                      <li>Criação e manutenção de APIs RESTful.</li>
-                      <li>Integração com bancos de dados relacionais e NoSQL.</li>
-                      <li>Levantamento de requisitos junto aos clientes.</li>
-                      <li>Gerenciamento de projetos e prazos.</li>
-                      <li>Manutenção e atualização de sistemas existentes.</li>
-                      <li>
-                        Resolução de problemas técnicos e otimização de
-                        performance.
-                      </li>
-                      <li>
-                        Desenvolvimento de e-commerce para Bunito burgues.
-                      </li>
-                    </ul>
+                    {/* Responsibilities */}
+                    <div className="space-y-4">
+                      <h4 className="font-bold text-cyber text-lg flex items-center gap-2">
+                        <span className="w-2 h-2 bg-primary rounded-full"></span>
+                        Principais Atividades
+                      </h4>
+                      <div className="space-y-2 max-h-48 overflow-y-auto">
+                        {exp.responsibilities.map((item, idx) => (
+                          <div 
+                            key={idx} 
+                            className="flex items-start gap-3 p-3 rounded-xl bg-card/20 hover:bg-card/40 transition-all duration-300 group/item"
+                          >
+                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-muted-foreground text-sm group-hover/item:text-foreground transition-colors">
+                              {item}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </CarouselItem>
-
-            {/* --- Experiência Americanas S.A. --- */}
-            <CarouselItem className="pl-2 md:pl-4 basis-full lg:basis-1/2">
-              <div className="animate-fade-in h-full" style={{ animationDelay: "300ms" }}>
-                <div className="bg-blue-100 rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow relative h-full">
-                  <div className="absolute -top-3 left-4 md:left-6 h-10 w-10 md:h-12 md:w-12 rounded-full bg-blue-100 flex items-center justify-center border-4 border-white shadow-md">
-                    <Briefcase className="text-primary" size={18} />
-                  </div>
-                  <div className="flex items-center mb-2">
-                    <CalendarDays className="text-primary mr-2" size={16} />
-                    <span className="text-xs md:text-sm text-gray-500">
-                      Mar 2023 - Mar 2025 (2 anos 1 mês)
-                    </span>
-                  </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-gray-800">
-                    Supervisor de departamento
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-600 font-medium">
-                    americanas s.a. - Exu, Pernambuco (Presencial)
-                  </p>
-                  <div className="mt-4 text-gray-700 text-xs md:text-sm">
-                    <p className="mb-3 leading-relaxed">
-                      Como supervisor de departamentos nas Americanas S.A, liderei
-                      e coordenei as operações de diferentes setores da loja para
-                      garantir um funcionamento eficiente e atender às
-                      expectativas dos clientes. Assumi responsabilidades
-                      abrangentes, desempenhando um papel essencial na gestão e no
-                      desenvolvimento da equipe.
-                    </p>
-
-                    <h4 className="font-semibold text-primary mt-4 mb-2">
-                      Principais Atividades:
-                    </h4>
-                    <ul className="list-disc pl-4 md:pl-5 space-y-1 text-gray-600 text-xs md:text-sm">
-                      <li>
-                        Supervisão e orientação de membros da equipe nos diversos
-                        departamentos.
-                      </li>
-                      <li>
-                        Otimização de processos e implementação de estratégias de
-                        vendas em conjunto com gerentes.
-                      </li>
-                      <li>Garantia da excelência no atendimento ao cliente.</li>
-                      <li>
-                        Monitoramento do desempenho das equipes e identificação de
-                        necessidades de treinamento.
-                      </li>
-                      <li>Contribuição para um ambiente de trabalho positivo.</li>
-                      <li>
-                        Participação na resolução de problemas e tomada de
-                        decisões estratégicas.
-                      </li>
-                      <li>
-                        Manutenção de comunicação eficaz com gerência e
-                        colaboradores.
-                      </li>
-                      <li>
-                        Gestão de situações desafiadoras e motivação da equipe
-                        para alcançar metas.
-                      </li>
-                      <li>
-                        Asseguração da integridade e organização dos
-                        departamentos.
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </CarouselItem>
+              </CarouselItem>
+            ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
+          
+          <div className="flex justify-center gap-4 mt-8">
+            <CarouselPrevious className="relative translate-y-0 left-0 glass-card border-primary/20 hover:bg-primary/10" />
+            <CarouselNext className="relative translate-y-0 right-0 glass-card border-primary/20 hover:bg-primary/10" />
+          </div>
         </Carousel>
       </div>
     </section>

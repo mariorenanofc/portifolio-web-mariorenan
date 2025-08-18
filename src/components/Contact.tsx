@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
-import { generateWhatsAppLink } from '@/lib/utils'; 
+import { generateWhatsAppLink } from '@/lib/utils';
+import { supabase } from '@/integrations/supabase/client';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -27,13 +28,19 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulando envio de formulário
-    setTimeout(() => {
-      console.log('Form data:', formData);
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) {
+        throw error;
+      }
+
       toast({
         title: "Mensagem enviada!",
         description: "Obrigado pelo contato. Responderei em breve.",
@@ -46,9 +53,16 @@ const Contact = () => {
         subject: '',
         message: '',
       });
-
+    } catch (error: any) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Ocorreu um erro. Tente novamente ou entre em contato pelo WhatsApp.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (

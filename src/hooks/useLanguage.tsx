@@ -26,19 +26,19 @@ const translations = {
     // Hero
     'hero.greeting': 'Olá, eu sou',
     'hero.title': 'Desenvolvedor Full Stack',
-    'hero.description': 'Especializado em criar experiências digitais excepcionais com tecnologias modernas',
-    'hero.cta': 'Ver meus projetos',
-    'hero.contact': 'Entre em contato',
+    'hero.description': 'Transformo ideias inovadoras em soluções digitais extraordinárias. Especialista em criar experiências que impressionam.',
+    'hero.cta': 'Ver projetos',
+    'hero.contact': 'Vamos conversar',
     
     // About
-    'about.title': 'Sobre mim',
+    'about.title': 'Sobre',
     'about.age': 'Idade',
     'about.location': 'Localização',
     'about.education': 'Formação',
     'about.experience': 'Experiência',
     
     // Skills
-    'skills.title': 'Habilidades',
+    'skills.title': 'Minhas Habilidades',
     
     // Experience
     'experience.title': 'Experiência',
@@ -47,9 +47,9 @@ const translations = {
     'projects.title': 'Projetos',
     
     // Contact
-    'contact.title': 'Contato',
-    'contact.subtitle': 'Vamos trabalhar juntos',
-    'contact.description': 'Estou sempre aberto a novas oportunidades e projetos interessantes.',
+    'contact.title': 'Entre em Contato',
+    'contact.subtitle': 'Vamos conversar!',
+    'contact.description': 'Estou sempre aberto a novas oportunidades e desafios. Sinta-se à vontade para entrar em contato comigo por qualquer um dos meios abaixo ou através do formulário.',
   },
   en: {
     // Navbar
@@ -66,19 +66,19 @@ const translations = {
     // Hero
     'hero.greeting': 'Hello, I am',
     'hero.title': 'Full Stack Developer',
-    'hero.description': 'Specialized in creating exceptional digital experiences with modern technologies',
-    'hero.cta': 'View my projects',
+    'hero.description': 'I transform innovative ideas into extraordinary digital solutions. Expert in creating impressive experiences.',
+    'hero.cta': 'View projects',
     'hero.contact': 'Get in touch',
     
     // About
-    'about.title': 'About me',
+    'about.title': 'About',
     'about.age': 'Age',
     'about.location': 'Location',
     'about.education': 'Education',
     'about.experience': 'Experience',
     
     // Skills
-    'skills.title': 'Skills',
+    'skills.title': 'My Skills',
     
     // Experience
     'experience.title': 'Experience',
@@ -88,8 +88,8 @@ const translations = {
     
     // Contact
     'contact.title': 'Contact',
-    'contact.subtitle': 'Let\'s work together',
-    'contact.description': 'I\'m always open to new opportunities and interesting projects.',
+    'contact.subtitle': 'Let\'s talk!',
+    'contact.description': 'I\'m always open to new opportunities and challenges. Feel free to contact me through any of the means below or through the form.',
   },
   es: {
     // Navbar
@@ -106,19 +106,19 @@ const translations = {
     // Hero
     'hero.greeting': 'Hola, soy',
     'hero.title': 'Desarrollador Full Stack',
-    'hero.description': 'Especializado en crear experiencias digitales excepcionales con tecnologías modernas',
-    'hero.cta': 'Ver mis proyectos',
+    'hero.description': 'Transformo ideas innovadoras en soluciones digitales extraordinarias. Experto en crear experiencias impresionantes.',
+    'hero.cta': 'Ver proyectos',
     'hero.contact': 'Contáctame',
     
     // About
-    'about.title': 'Acerca de mí',
+    'about.title': 'Acerca',
     'about.age': 'Edad',
     'about.location': 'Ubicación',
     'about.education': 'Educación',
     'about.experience': 'Experiencia',
     
     // Skills
-    'skills.title': 'Habilidades',
+    'skills.title': 'Mis Habilidades',
     
     // Experience
     'experience.title': 'Experiencia',
@@ -128,8 +128,8 @@ const translations = {
     
     // Contact
     'contact.title': 'Contacto',
-    'contact.subtitle': 'Trabajemos juntos',
-    'contact.description': 'Siempre estoy abierto a nuevas oportunidades y proyectos interesantes.',
+    'contact.subtitle': '¡Hablemos!',
+    'contact.description': 'Siempre estoy abierto a nuevas oportunidades y desafíos. No dudes en contactarme por cualquiera de los medios a continuación o a través del formulario.',
   },
 };
 

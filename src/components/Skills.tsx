@@ -1,7 +1,9 @@
 
 import { CheckCircle, Code, Lightbulb, Users } from 'lucide-react';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Skills = () => {
+  const { t } = useLanguage();
   const skills = [
     { 
       category: 'Desenvolvimento',
@@ -47,7 +49,7 @@ const Skills = () => {
   return (
     <section id="skills" className="bg-secondary">
       <div className="container">
-        <h2 className="section-title">Minhas Habilidades</h2>
+        <h2 className="section-title">{t('skills.title')}</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {skills.map((skillGroup, index) => {

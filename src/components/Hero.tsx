@@ -2,8 +2,10 @@
 import { ArrowDown, Github, Linkedin, Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { generateWhatsAppLink } from '@/lib/utils';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Hero = () => {
+  const { t } = useLanguage();
 
   const heroWhatsappLink = generateWhatsAppLink(
     '5587999061405',
@@ -25,13 +27,13 @@ const Hero = () => {
           <div className="order-2 lg:order-1 w-full lg:w-1/2 space-y-6 lg:space-y-8 animate-slide-up-fade glass-card p-6 lg:p-10 rounded-3xl">
             <div className="space-y-2">
               <h2 className="text-cyber font-semibold text-xl md:text-2xl animate-text-glow font-display tracking-wide">
-                🚀 Desenvolvedor Full Stack
+                🚀 {t('hero.title')}
               </h2>
               <div className="w-20 h-1 bg-gradient-primary rounded-full"></div>
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight font-display">
-              Olá, eu sou<br />
+              {t('hero.greeting')}<br />
               <span className="bg-gradient-primary bg-clip-text text-transparent animate-text-glow relative">
                 Mário Renan
                 <div className="absolute -inset-2 bg-gradient-primary opacity-20 blur-xl rounded-lg"></div>
@@ -39,15 +41,13 @@ const Hero = () => {
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl animate-fade-in font-light" style={{ animationDelay: '600ms' }}>
-              Transformo <span className="text-primary font-semibold">ideias inovadoras</span> em 
-              <span className="text-cyber font-semibold"> soluções digitais extraordinárias</span>. 
-              Especialista em criar experiências que <span className="text-gold font-semibold">impressionam</span>.
+              {t('hero.description')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 animate-scale-up" style={{ animationDelay: '800ms' }}>
               <a href="#contact" className="w-full sm:w-auto">
                 <Button className="w-full sm:w-auto btn-premium text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 font-semibold tracking-wide">
-                  🎯 Vamos conversar
+                  🎯 {t('hero.contact')}
                 </Button>
               </a>
               <a href="#projects" className="w-full sm:w-auto">
@@ -55,7 +55,7 @@ const Hero = () => {
                   variant="outline" 
                   className="w-full sm:w-auto bg-transparent border-2 border-primary/30 text-primary hover:bg-primary/10 hover:border-primary backdrop-blur-sm text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 font-semibold tracking-wide transition-all duration-500 hover:shadow-glow"
                 >
-                  ⚡ Ver projetos
+                  ⚡ {t('hero.cta')}
                 </Button>
               </a>
             </div>

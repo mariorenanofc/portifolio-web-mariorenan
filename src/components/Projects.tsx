@@ -8,8 +8,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const Projects = () => {
+  const { t } = useLanguage();
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   
   const projectsList = [
@@ -71,7 +73,7 @@ const Projects = () => {
       <div className="container relative z-10">
         <div className="text-center mb-16">
           <h2 className="section-title animate-slide-up">
-            Projetos <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Inovadores</span>
+            {t('projects.title')} <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Inovadores</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '200ms' }}>
             Desenvolvimentos que combinam criatividade, tecnologia e experiência do usuário

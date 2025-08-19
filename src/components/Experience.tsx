@@ -6,8 +6,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const Experience = () => {
+  const { t } = useLanguage();
   const experiences = [
     {
       title: "Tutor Especialista",
@@ -77,7 +79,7 @@ const Experience = () => {
 
       <div className="container relative">
         <h2 className="section-title">
-          💼 Experiência <span className="text-primary">Profissional</span>
+          💼 {t('experience.title')} <span className="text-primary">Profissional</span>
         </h2>
 
         <Carousel

@@ -1,6 +1,8 @@
 import { GraduationCap, Briefcase, Code } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const About = () => {
+  const { t } = useLanguage();
   return (
     <section id="about" className="relative bg-background">
       {/* Animated background effects */}
@@ -11,7 +13,7 @@ const About = () => {
       
       <div className="container">
         <h2 className="section-title">
-          💎 Sobre <span className="text-gold">Mim</span>
+          💎 {t('about.title')} <span className="text-gold">Mim</span>
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
@@ -20,7 +22,7 @@ const About = () => {
               <div className="p-4 bg-gradient-primary rounded-2xl mr-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                 <GraduationCap size={32} className="text-primary-foreground" />
               </div>
-              <h3 className="text-2xl font-bold text-cyber font-display">🎓 Formação</h3>
+              <h3 className="text-2xl font-bold text-cyber font-display">🎓 {t('about.education')}</h3>
             </div>
             <div className="space-y-6">
               {[
@@ -74,7 +76,7 @@ const About = () => {
               <div className="p-4 bg-gradient-cyber rounded-2xl mr-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                 <Briefcase size={32} className="text-primary-foreground" />
               </div>
-              <h3 className="text-2xl font-bold text-primary font-display">💼 Experiência</h3>
+              <h3 className="text-2xl font-bold text-primary font-display">💼 {t('about.experience')}</h3>
             </div>
             <div className="space-y-6">
               <div className="relative">

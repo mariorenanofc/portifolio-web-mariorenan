@@ -6,8 +6,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
 import { generateWhatsAppLink } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Contact = () => {
+  const { t } = useLanguage();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
@@ -66,15 +68,15 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-white">
+    <section id="contact" className="bg-background">{/* Corrigido para usar tema */}
       <div className="container">
-        <h2 className="section-title">Entre em Contato</h2>
+        <h2 className="section-title">{t('contact.title')}</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="animate-slide-up">
-            <h3 className="text-2xl font-semibold text-gray-800 mb-6">Vamos conversar!</h3>
-            <p className="text-gray-600 mb-8">
-              Estou sempre aberto a novas oportunidades e desafios. Sinta-se à vontade para entrar em contato comigo por qualquer um dos meios abaixo ou através do formulário.
+            <h3 className="text-2xl font-semibold text-foreground mb-6">{t('contact.subtitle')}</h3>
+            <p className="text-muted-foreground mb-8">
+              {t('contact.description')}
             </p>
 
             <div className="space-y-6">
@@ -84,7 +86,7 @@ const Contact = () => {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-800">Email</h4>
+                  <h4 className="font-medium text-foreground">Email</h4>
                   <a
                     href="mailto:MARIOVENDASONLINE10K@GMAIL.COM"
                     className="text-primary text-xs hover:underline"
@@ -100,7 +102,7 @@ const Contact = () => {
                   <Phone size={20} />
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-800">WhatsApp</h4> {/* Pode mudar o título se quiser */}
+                  <h4 className="font-medium text-foreground">WhatsApp</h4> {/* Pode mudar o título se quiser */}
                   {/* 3. Atualize o link do telefone */}
                   <a
                     href={contactWhatsappLink} // Use a variável gerada
@@ -120,19 +122,19 @@ const Contact = () => {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-800">Localização</h4>
-                  <p className="text-gray-600">Brasil</p>
+                  <h4 className="font-medium text-foreground">Localização</h4>
+                  <p className="text-muted-foreground">Brasil</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Formulário */}
-          <div className="bg-secondary rounded-lg p-6 shadow-md animate-slide-up" style={{ animationDelay: '200ms' }}>
+          <div className="glass-card rounded-lg p-6 shadow-md animate-slide-up" style={{ animationDelay: '200ms' }}>
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Campos do formulário ... */}
                <div>
-                <label htmlFor="name" className="block text-gray-700 mb-1">Nome</label>
+                <label htmlFor="name" className="block text-foreground mb-1">Nome</label>
                 <Input
                   id="name"
                   name="name"
@@ -145,7 +147,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-gray-700 mb-1">Email</label>
+                <label htmlFor="email" className="block text-foreground mb-1">Email</label>
                 <Input
                   id="email"
                   name="email"
@@ -159,7 +161,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-gray-700 mb-1">Assunto</label>
+                <label htmlFor="subject" className="block text-foreground mb-1">Assunto</label>
                 <Input
                   id="subject"
                   name="subject"
@@ -172,7 +174,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-gray-700 mb-1">Mensagem</label>
+                <label htmlFor="message" className="block text-foreground mb-1">Mensagem</label>
                 <Textarea
                   id="message"
                   name="message"

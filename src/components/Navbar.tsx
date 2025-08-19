@@ -2,10 +2,13 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
+import { LanguageSelector } from './LanguageSelector';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,11 +32,11 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'Início', href: '#home' },
-    { name: 'Sobre', href: '#about' },
-    { name: 'Experiência', href: '#experience' },
-    { name: 'Projetos', href: '#projects' },
-    { name: 'Contato', href: '#contact' },
+    { name: t('nav.home'), href: '#home' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.experience'), href: '#experience' },
+    { name: t('nav.projects'), href: '#projects' },
+    { name: t('nav.contact'), href: '#contact' },
   ];
 
   return (
@@ -48,24 +51,35 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-6 items-center">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-blue-400 hover:text-primary font-medium transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
-          <ThemeToggle />
+        <div className="hidden md:flex items-center gap-6">
+          <div className="flex space-x-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-muted-foreground hover:text-primary font-medium transition-colors relative group"
+              >
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ))}
+          </div>
+          <div className="flex items-center gap-2 border-l border-border pl-4">
+            <LanguageSelector />
+            <ThemeToggle />
+          </div>
         </div>
 
         {/* Mobile Navigation Toggle */}
         <div className="md:hidden flex items-center gap-2">
+          <LanguageSelector />
           <ThemeToggle />
-          <button className="text-foreground" onClick={toggleMenu}>
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          <button 
+            className="text-foreground hover:text-primary transition-colors p-1" 
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>

@@ -16,8 +16,8 @@ const Projects = () => {
   
   const projectsList = [
     {
-      title: "Exu Delivery",
-      description: "Plataforma de delivery de comida com interface moderna e sistema de pedidos online.",
+      title: t('projects.exudelivery.title'),
+      description: t('projects.exudelivery.description'),
       tech: ["Next.js", "Tailwind CSS", "Lucide", "React", "NextAuth.js"],
       github: "https://github.com/mariorenanofc/fsw-foods",
       live: "http://exudelivery.vercel.app/",
@@ -25,8 +25,8 @@ const Projects = () => {
       gradient: "from-red-500 to-orange-500"
     },
     {
-      title: "Controle Finance AI",
-      description: "Aplicação para controle financeiro com auxílio de IA para análise de gastos.",
+      title: t('projects.finance.title'),
+      description: t('projects.finance.description'),
       tech: ["Next.js", "React", "Tailwind CSS", "Webpack", "Node.js"], 
       github: "https://github.com/mariorenanofc/controle-finance-ai",
       live: "https://controle-finance-ai.vercel.app/login",
@@ -34,8 +34,8 @@ const Projects = () => {
       gradient: "from-green-500 to-emerald-500"
     },
     {
-      title: "Cardápio Online",
-      description: "Cardápio digital interativo com design responsivo e experiência otimizada.",
+      title: t('projects.cardapio.title'),
+      description: t('projects.cardapio.description'),
       tech: ["HTML", "CSS", "JavaScript"],
       github: "https://github.com/mariorenanofc/cardapio-online",
       live: "https://mariorenanofc.github.io/cardapio-online/index.html",
@@ -43,8 +43,8 @@ const Projects = () => {
       gradient: "from-blue-500 to-cyan-500"
     },
     {
-      title: "O Esperto Comparador",
-      description: "Plataforma de comparação de preços em supermercados para economizar nas compras.",
+      title: t('projects.comparador.title'),
+      description: t('projects.comparador.description'),
       tech: ["React", "TypeScript", "Tailwind CSS", "Lovable", "Web APIs"],
       github: "https://github.com/mariorenanofc/o-esperto-comparador",
       live: "https://preview--o-esperto-comparador.lovable.app/",
@@ -52,8 +52,8 @@ const Projects = () => {
       gradient: "from-purple-500 to-pink-500"
     },
     {
-      title: "Portfolio Denilson Treinador",
-      description: "Site profissional para personal trainer com foco em transformações corporais.",
+      title: t('projects.portfolio.title'),
+      description: t('projects.portfolio.description'),
       tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
       github: "https://github.com/mariorenanofc/portfolio-denilson",
       live: "http://portifolio-denilson-lima.vercel.app/",
@@ -76,7 +76,7 @@ const Projects = () => {
             {t('projects.title')} <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Inovadores</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '200ms' }}>
-            Desenvolvimentos que combinam criatividade, tecnologia e experiência do usuário
+            {t('projects.subtitle')}
           </p>
         </div>
         
@@ -168,14 +168,14 @@ const Projects = () => {
         </Carousel>
 
         {/* Call to action */}
-        <div className="text-center mt-12 md:mt-16">
+          <div className="text-center mt-12 md:mt-16">
           <div className="inline-block p-4 md:p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl backdrop-blur-sm border border-primary/20 animate-glow">
-            <p className="text-base md:text-lg font-medium mb-3 md:mb-4">Interessado em colaborar?</p>
+            <p className="text-base md:text-lg font-medium mb-3 md:mb-4">{t('projects.cta.interested')}</p>
             <a 
               href="#contact" 
               className="inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm md:text-base"
             >
-              Vamos conversar!
+              {t('projects.cta.button')}
             </a>
           </div>
         </div>

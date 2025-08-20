@@ -6,43 +6,22 @@ const Skills = () => {
   const { t } = useLanguage();
   const skills = [
     { 
-      category: 'Desenvolvimento',
+      category: t('skills.development'),
       icon: Code,
       gradient: 'from-blue-500 to-purple-500',
-      items: [
-        'Desenvolvimento web Full Stack',
-        'Desenvolvimento Front-End',
-        'Desenvolvimento Back-End',
-        'APIs RESTful',
-        'Desenvolvimento de Aplicações',
-        'Interfaces responsivas'
-      ] 
+      items: (t('skills.development.items') as string).split(',')
     },
     { 
-      category: 'Técnicas',
+      category: t('skills.technical'),
       icon: Lightbulb,
       gradient: 'from-green-500 to-teal-500',
-      items: [
-        'Resolução de problemas',
-        'Análise de requisitos',
-        'Controle de versão (Git)',
-        'Testes e depuração',
-        'Arquitetura de software',
-        'Metodologias ágeis'
-      ] 
+      items: (t('skills.technical.items') as string).split(',')
     },
     { 
-      category: 'Soft Skills',
+      category: t('skills.soft'),
       icon: Users,
       gradient: 'from-pink-500 to-rose-500',
-      items: [
-        'Comunicação eficaz',
-        'Trabalho em equipe',
-        'Aprendizado contínuo',
-        'Organização',
-        'Atendimento ao cliente',
-        'Adaptabilidade'
-      ] 
+      items: (t('skills.soft.items') as string).split(',')
     },
   ];
 

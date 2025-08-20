@@ -12,14 +12,14 @@ const Experience = () => {
   const { t } = useLanguage();
   const experiences = [
     {
-      title: "Tutor Especialista",
-      company: "CESAR School",
-      location: "Trilha Tech - Bolsista",
-      period: "Mar 2024 - Atualmente",
+      title: t('experience.tutor.title'),
+      company: t('experience.tutor.company'),
+      location: t('experience.tutor.location'),
+      period: t('experience.tutor.period'),
       color: "from-primary/10 to-cyber/10",
       borderColor: "border-primary/20",
       iconBg: "bg-gradient-primary",
-      description: "Desenvolvendo habilidades estratégicas de acompanhamento e capacitação no programa Trilha Tech, uma oportunidade de formação para o mercado de tecnologia.",
+      description: t('experience.tutor.description'),
       responsibilities: [
         "Mediação de instrumentos pedagógicos para facilitar aprendizagem",
         "Aplicação de instrumentos avaliativos para monitoramento acadêmico",
@@ -30,14 +30,14 @@ const Experience = () => {
       ]
     },
     {
-      title: "Desenvolvedor Freelancer",
-      company: "Projetos Diversos",
-      location: "Atuação Remota",
-      period: "Atuação Freelancer",
+      title: t('experience.freelancer.title'),
+      company: t('experience.freelancer.company'),
+      location: t('experience.freelancer.location'),
+      period: t('experience.freelancer.period'),
       color: "from-cyber/10 to-gold/10",
       borderColor: "border-cyber/20",
       iconBg: "bg-gradient-cyber",
-      description: "Desenvolvimento de soluções web personalizadas, focando em aplicações front-end e back-end funcionais e eficientes para diversos clientes.",
+      description: t('experience.freelancer.description'),
       responsibilities: [
         "Desenvolvimento de websites e aplicações responsivas",
         "Criação e manutenção de APIs RESTful",
@@ -49,14 +49,14 @@ const Experience = () => {
       ]
     },
     {
-      title: "Supervisor de Departamento",
-      company: "Americanas S.A.",
-      location: "Exu, Pernambuco",
-      period: "Mar 2023 - Mar 2025",
+      title: t('experience.supervisor.title'),
+      company: t('experience.supervisor.company'),
+      location: t('experience.supervisor.location'),
+      period: t('experience.supervisor.period'),
       color: "from-gold/10 to-primary/10",
       borderColor: "border-gold/20",
       iconBg: "bg-gradient-gold",
-      description: "Liderança e coordenação de operações em diferentes setores, garantindo funcionamento eficiente e desenvolvimento de equipes para atender expectativas dos clientes.",
+      description: t('experience.supervisor.description'),
       responsibilities: [
         "Supervisão e orientação de equipes multidepartamentais",
         "Otimização de processos e estratégias de vendas",
@@ -131,7 +131,7 @@ const Experience = () => {
                     <div className="space-y-4">
                       <h4 className="font-bold text-cyber text-lg flex items-center gap-2">
                         <span className="w-2 h-2 bg-primary rounded-full"></span>
-                        Principais Atividades
+                        {t('experience.activities')}
                       </h4>
                       <div className="space-y-2 max-h-48 overflow-y-auto">
                         {exp.responsibilities.map((item, idx) => (

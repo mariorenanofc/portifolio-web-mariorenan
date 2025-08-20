@@ -27,28 +27,28 @@ const About = () => {
             <div className="space-y-6">
               {[
                 {
-                  title: "Formação Intensiva Privada Full Stack",
-                  institution: "Full Stack Club",
-                  year: "2025",
+                  title: t('about.education.title1'),
+                  institution: t('about.education.institution1'),
+                  year: t('about.education.year1'),
                   color: "bg-cyber",
-                  status: "Em andamento"
+                  status: t('about.education.status1')
                 },
                 {
-                  title: "Pós-Graduação em Desenvolvimento Full Stack",
-                  institution: "Universidade Estácio de Sá (UNESA)",
-                  year: "2025",
+                  title: t('about.education.title2'),
+                  institution: t('about.education.institution2'),
+                  year: t('about.education.year2'),
                   color: "bg-primary"
                 },
                 {
-                  title: "Análise e Desenvolvimento de Sistemas",
-                  institution: "Universidade Estácio de Sá (UNESA)",
-                  year: "2024",
+                  title: t('about.education.title3'),
+                  institution: t('about.education.institution3'),
+                  year: t('about.education.year3'),
                   color: "bg-cyber"
                 },
                 {
-                  title: "Curso Técnico em Desenvolvimento de Sistemas",
-                  institution: "Ensino Técnico Estadual (ETE)",
-                  year: "2024",
+                  title: t('about.education.title4'),
+                  institution: t('about.education.institution4'),
+                  year: t('about.education.year4'),
                   color: "bg-gold"
                 }
               ].map((item, index) => (
@@ -81,18 +81,18 @@ const About = () => {
             <div className="space-y-6">
               <div className="relative">
                 <div className="absolute -left-4 top-0 w-full h-0.5 bg-gradient-primary opacity-30"></div>
-                <h4 className="font-bold text-xl text-cyber mb-3">Tutor Especialista</h4>
+                <h4 className="font-bold text-xl text-cyber mb-3">{t('about.experience.title')}</h4>
                 <p className="text-gold font-semibold text-lg mb-4">
-                  Trilha Tech - CESAR School 🚀
+                  {t('about.experience.company')}
                 </p>
                 <div className="grid gap-3">
                   {[
-                    "🎯 Monitoramento e avaliação especializada de alunos",
-                    "💡 Suporte técnico avançado para resolução de dúvidas",
-                    "📚 Apresentação de conteúdo didático inovador",
-                    "🔥 Criação de desafios práticos e projetos reais",
-                    "📊 Análise contínua de performance individual",
-                    "📈 Levantamento estratégico de dados de progresso"
+                    t('about.experience.activity1'),
+                    t('about.experience.activity2'),
+                    t('about.experience.activity3'),
+                    t('about.experience.activity4'),
+                    t('about.experience.activity5'),
+                    t('about.experience.activity6')
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3 p-3 rounded-xl bg-card/30 hover:bg-card/50 transition-all duration-300 group/item">
                       <span className="text-sm font-medium text-muted-foreground group-hover/item:text-primary transition-colors">
@@ -110,28 +110,26 @@ const About = () => {
               <div className="p-4 bg-gradient-gold rounded-2xl mr-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                 <Code size={32} className="text-primary-foreground" />
               </div>
-              <h3 className="text-2xl font-bold text-gold font-display">⚡ Missão</h3>
+              <h3 className="text-2xl font-bold text-gold font-display">⚡ {t('about.mission.title')}</h3>
             </div>
             <div className="space-y-6">
               <div className="relative p-6 bg-gradient-to-r from-primary/5 to-cyber/5 rounded-2xl border border-primary/20">
                 <p className="text-lg leading-relaxed text-foreground font-medium">
-                  🎯 <span className="text-primary font-bold">Desenvolvedor visionário</span> de 27 anos, 
-                  especializado em transformar <span className="text-cyber font-bold">conceitos complexos</span> em 
-                  <span className="text-gold font-bold">soluções digitais extraordinárias</span>.
+                  {t('about.mission.description')}
                 </p>
               </div>
               
               <div className="grid gap-4">
                 {[
-                  { icon: "🚀", text: "Análise e arquitetura de sistemas de alta performance" },
-                  { icon: "💎", text: "Desenvolvimento full-stack com tecnologias de ponta" },
-                  { icon: "🎨", text: "Design de experiências digitais memoráveis" },
-                  { icon: "🔥", text: "Inovação constante e aprendizado contínuo" }
+                  t('about.mission.item1'),
+                  t('about.mission.item2'),
+                  t('about.mission.item3'),
+                  t('about.mission.item4')
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-4 p-4 rounded-xl bg-card/20 hover:bg-card/40 transition-all duration-300 group/item">
-                    <span className="text-2xl">{item.icon}</span>
+                    <span className="text-2xl">{item.split(' ')[0]}</span>
                     <p className="text-muted-foreground group-hover/item:text-foreground transition-colors font-medium">
-                      {item.text}
+                      {item.substring(2)}
                     </p>
                   </div>
                 ))}
@@ -139,7 +137,7 @@ const About = () => {
 
               <div className="text-center p-6 bg-gradient-primary rounded-2xl">
                 <p className="text-primary-foreground font-bold text-lg">
-                  ✨ Sempre aberto a novos desafios e oportunidades de crescimento! ✨
+                  {t('about.mission.cta')}
                 </p>
               </div>
             </div>

@@ -1,29 +1,32 @@
 
 import { Code, Globe, Server } from 'lucide-react';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Services = () => {
+  const { t } = useLanguage();
+  
   const servicesList = [
     {
       icon: <Code className="text-primary" size={36} />,
-      title: "Desenvolvimento Web",
-      description: "Criação de sites e aplicações web modernas, responsivas e de alta performance utilizando as tecnologias mais recentes do mercado."
+      title: t('services.web.title'),
+      description: t('services.web.description')
     },
     {
       icon: <Globe className="text-primary" size={36} />,
-      title: "Front-End",
-      description: "Desenvolvimento de interfaces de usuário atraentes e funcionais utilizando HTML, CSS, JavaScript, React, Vue.js e Next.js."
+      title: t('services.frontend.title'),
+      description: t('services.frontend.description')
     },
     {
       icon: <Server className="text-primary" size={36} />,
-      title: "Back-End",
-      description: "Criação de APIs robustas e seguras, integração com bancos de dados e implementação de lógica de negócios utilizando Node.js, Java e SQL."
+      title: t('services.backend.title'),
+      description: t('services.backend.description')
     }
   ];
 
   return (
     <section id="services" className="bg-background">
       <div className="container">
-        <h2 className="section-title">Meus Serviços</h2>
+        <h2 className="section-title">{t('services.title')}</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {servicesList.map((service, index) => (

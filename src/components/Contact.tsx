@@ -44,8 +44,8 @@ const Contact = () => {
       }
 
       toast({
-        title: "Mensagem enviada!",
-        description: "Obrigado pelo contato. Responderei em breve.",
+        title: t('contact.form.success.title'),
+        description: t('contact.form.success.description'),
       });
 
       // Reset form
@@ -58,8 +58,8 @@ const Contact = () => {
     } catch (error: any) {
       console.error('Error sending email:', error);
       toast({
-        title: "Erro ao enviar mensagem",
-        description: "Ocorreu um erro. Tente novamente ou entre em contato pelo WhatsApp.",
+        title: t('contact.form.error.title'),
+        description: t('contact.form.error.description'),
         variant: "destructive",
       });
     } finally {
@@ -134,20 +134,20 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Campos do formulário ... */}
                <div>
-                <label htmlFor="name" className="block text-foreground mb-1">Nome</label>
+                <label htmlFor="name" className="block text-foreground mb-1">{t('contact.form.name')}</label>
                 <Input
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder="Seu nome"
+                  placeholder={t('contact.form.name.placeholder')}
                   className="w-full"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-foreground mb-1">Email</label>
+                <label htmlFor="email" className="block text-foreground mb-1">{t('contact.form.email')}</label>
                 <Input
                   id="email"
                   name="email"
@@ -155,33 +155,33 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="seu.email@exemplo.com"
+                  placeholder={t('contact.form.email.placeholder')}
                   className="w-full"
                 />
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-foreground mb-1">Assunto</label>
+                <label htmlFor="subject" className="block text-foreground mb-1">{t('contact.form.subject')}</label>
                 <Input
                   id="subject"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  placeholder="Assunto da mensagem"
+                  placeholder={t('contact.form.subject.placeholder')}
                   className="w-full"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-foreground mb-1">Mensagem</label>
+                <label htmlFor="message" className="block text-foreground mb-1">{t('contact.form.message')}</label>
                 <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  placeholder="Sua mensagem..."
+                  placeholder={t('contact.form.message.placeholder')}
                   className="w-full min-h-[120px]"
                 />
               </div>
@@ -197,12 +197,12 @@ const Contact = () => {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Enviando...
+                    {t('contact.form.sending')}
                   </span>
                 ) : (
                   <span className="flex items-center justify-center"> {/* Adicionado justify-center */}
                     <Send className="mr-2" size={18} />
-                    Enviar mensagem
+                    {t('contact.form.send')}
                   </span>
                 )}
               </Button>

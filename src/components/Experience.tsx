@@ -9,7 +9,7 @@ import {
 import { useLanguage } from "@/hooks/useLanguage";
 
 const Experience = () => {
-  const { t } = useLanguage();
+  const { t, tArray } = useLanguage();
   const experiences = [
     {
       title: t('experience.tutor.title'),
@@ -20,14 +20,7 @@ const Experience = () => {
       borderColor: "border-primary/20",
       iconBg: "bg-gradient-primary",
       description: t('experience.tutor.description'),
-      responsibilities: [
-        "Mediação de instrumentos pedagógicos para facilitar aprendizagem",
-        "Aplicação de instrumentos avaliativos para monitoramento acadêmico",
-        "Acompanhamento de atividades presenciais e em laboratório",
-        "Coleta e análise de dados para tomada de decisão",
-        "Suporte técnico e educacional aos estudantes",
-        "Elaboração de relatórios de progresso e recomendações"
-      ]
+      responsibilities: tArray('experience.tutor.responsibilities')
     },
     {
       title: t('experience.freelancer.title'),
@@ -38,15 +31,7 @@ const Experience = () => {
       borderColor: "border-cyber/20",
       iconBg: "bg-gradient-cyber",
       description: t('experience.freelancer.description'),
-      responsibilities: [
-        "Desenvolvimento de websites e aplicações responsivas",
-        "Criação e manutenção de APIs RESTful",
-        "Integração com bancos de dados relacionais e NoSQL",
-        "Levantamento de requisitos junto aos clientes",
-        "Gerenciamento de projetos e prazos",
-        "Desenvolvimento de e-commerce (Bunito Burgues)",
-        "Otimização de performance e resolução técnica"
-      ]
+      responsibilities: tArray('experience.freelancer.responsibilities')
     },
     {
       title: t('experience.supervisor.title'),
@@ -57,15 +42,7 @@ const Experience = () => {
       borderColor: "border-gold/20",
       iconBg: "bg-gradient-gold",
       description: t('experience.supervisor.description'),
-      responsibilities: [
-        "Supervisão e orientação de equipes multidepartamentais",
-        "Otimização de processos e estratégias de vendas",
-        "Garantia da excelência no atendimento ao cliente",
-        "Monitoramento de performance e identificação de treinamentos",
-        "Gestão de situações desafiadoras e motivação de equipes",
-        "Comunicação eficaz entre gerência e colaboradores",
-        "Manutenção da integridade organizacional dos departamentos"
-      ]
+      responsibilities: tArray('experience.supervisor.responsibilities')
     }
   ];
 

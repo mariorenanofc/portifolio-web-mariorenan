@@ -6,6 +6,7 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  tArray: (key: string) => string[];
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -615,8 +616,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     return translations[language][key] || key;
   };
 
+  const tArray = (key: string): string[] => {
+    const value = translations[language][key];
+    return Array.isArray(value) ? value : [];
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t, tArray }}>
       {children}
     </LanguageContext.Provider>
   );

@@ -1,79 +1,124 @@
-#   Portfólio Web - Mário Renan
+# 🌟 Portfólio Web - Mário Renan
 
-    Este é o meu portfólio web pessoal, desenvolvido para apresentar meus projetos, habilidades e experiência em desenvolvimento web. Aqui você encontrará exemplos do meu trabalho, informações sobre minha formação e como entrar em contato.
+[![React](https://img.shields.io/badge/React-18.3.1-blue.svg)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Latest-blue.svg)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.x-38B2AC.svg)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-Latest-646CFF.svg)](https://vitejs.dev/)
 
-    ##   Sobre o Projeto
+> Portfólio web profissional desenvolvido para apresentar projetos, habilidades e experiências como Desenvolvedor Full Stack.
 
-    Este portfólio foi criado para demonstrar minhas habilidades e projetos como desenvolvedor web. O design e o desenvolvimento foram realizados por mim, utilizando as seguintes tecnologias:
+## 🎯 Sobre o Projeto
 
-     **Front-End:** HTML5, CSS3, JavaScript
-     **Back-End:** Node.js
-     **Banco de Dados:** MySQL
-     **Outras:** \[Aqui você pode adicionar outras tecnologias ou bibliotecas que você usou, se aplicável]
+Este portfólio foi desenvolvido utilizando tecnologias modernas para criar uma experiência visual rica e responsiva. O projeto demonstra habilidades técnicas através de uma interface elegante e funcional.
 
-    O objetivo é fornecer uma visão geral das minhas capacidades e servir como um ponto de contato para potenciais empregadores ou colaboradores.
+### ✨ Características Principais
 
-    ##   Projetos
+- 🌍 **Multi-idioma** - Suporte completo para Português e Inglês
+- 📱 **Design Responsivo** - Otimizado para todos os dispositivos
+- 🎨 **UI/UX Moderna** - Interface limpa e profissional
+- ⚡ **Performance** - Carregamento rápido e otimizado
+- 🔧 **Componentização** - Arquitetura modular e reutilizável
 
-    \[Aqui você pode adicionar uma seção detalhando seus projetos. Para cada projeto, inclua:]
+## 🚀 Tecnologias Utilizadas
 
-     **Nome do Projeto:** \[Nome do projeto]
-     **Descrição:** \[Breve descrição do projeto]
-     **Tecnologias Utilizadas:** \[Lista das tecnologias usadas no projeto]
-     **Link:** \[Link para o projeto online ou para o repositório do projeto no GitHub]
+### Frontend
+- **React 18.3.1** - Biblioteca principal
+- **TypeScript** - Tipagem estática
+- **Tailwind CSS** - Framework de estilização
+- **Vite** - Build tool e desenvolvimento
+- **Lucide React** - Ícones modernos
 
-    ##   Habilidades
+### Backend & Integração
+- **Supabase** - Backend as a Service
+- **React Query** - Gerenciamento de estado servidor
+- **React Hook Form** - Gerenciamento de formulários
 
-    ###   Front-End
+### Ferramentas de Desenvolvimento
+- **ESLint** - Linting de código
+- **PostCSS** - Processamento de CSS
+- **Git** - Controle de versão
 
-    * HTML5
-    * CSS3
-    * JavaScript
-    * TypeScript [cite: 3]
-    * VueJS [cite: 3]
-    * Next.js [cite: 3]
-    * ReactJS [cite: 8]
+## 📁 Estrutura do Projeto
 
-    ###   Back-End
+```
+src/
+├── components/          # Componentes React
+│   ├── ui/             # Componentes de interface
+│   ├── About.tsx       # Seção sobre
+│   ├── Contact.tsx     # Formulário de contato
+│   ├── Experience.tsx  # Experiências profissionais
+│   ├── Hero.tsx        # Seção principal
+│   ├── Projects.tsx    # Projetos realizados
+│   └── ...
+├── hooks/              # Hooks customizados
+├── pages/              # Páginas da aplicação
+└── lib/                # Utilitários e configurações
+```
 
-    * Node.js [cite: 2, 8]
-    * Java [cite: 8]
-    * SQL Server [cite: 2, 8]
-    * Postman [cite: 8]
+## 🎨 Seções do Portfólio
 
-    ###   Banco de Dados
+### 🏠 Página Principal
+- Apresentação pessoal e call-to-action
+- Navegação intuitiva e design atrativo
 
-    * MySQL [cite: 8]
-    * NoSQL [cite: 8]
+### 👨‍💻 Sobre Mim
+- Formação acadêmica e certificações
+- Experiência profissional detalhada
+- Missão e objetivos profissionais
 
-    ###   Outras
+### 💼 Experiências
+- **Monitor de Tutoria** - Mediação pedagógica e suporte educacional
+- **Desenvolvedor Freelancer** - Desenvolvimento web full stack
+- **Supervisor Comercial** - Liderança e gestão de equipes
 
-    * Git
-    * Análise e detalhamento de requisitos [cite: 4]
+### 🛠️ Habilidades Técnicas
+- **Frontend**: React, TypeScript, JavaScript, HTML5, CSS3
+- **Backend**: Node.js, APIs RESTful
+- **Banco de Dados**: MySQL, PostgreSQL, Supabase
+- **Ferramentas**: Git, Postman, Figma
 
-    ##   Formação
+### 🚀 Projetos
+Showcase de projetos desenvolvidos com diferentes tecnologias e complexidades.
 
-    * Graduação em ADS - concluído em 2024 - Universidade Estácio de Sá - UNESA [cite: 5]
-    * POS - Graduação em Desenvolvimento Full Stack - cursando - Universidade Estácio de Sá - UNESA [cite: 5]
-    * Curso técnico em Desenvolvimento de Sistemas - 2024 - ETE [cite: 5]
-    * Curso Profissionalizante em Desenvolvimento de Software - 2023 - Devaria [cite: 5]
+## 📧 Contato
 
-    ##   Experiência Profissional
+**Mário Renan** - Desenvolvedor Full Stack
 
-    ###   Infor Bacural - Empresa de Assistência Técnica
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-mariorenanofc-0077B5.svg)](https://linkedin.com/in/mariorenanofc)
+[![GitHub](https://img.shields.io/badge/GitHub-mariorenanofc-181717.svg)](https://github.com/mariorenanofc)
+[![Email](https://img.shields.io/badge/Email-MARIOVENDASONLINE10K@GMAIL.COM-D14836.svg)](mailto:MARIOVENDASONLINE10K@GMAIL.COM)
+[![Phone](https://img.shields.io/badge/Telefone-(87)%2099906--1405-25D366.svg)](tel:+5587999061405)
 
-    * Auxílio em serviços de manutenção de aparelhos eletrônicos [cite: 5, 6, 7]
-    * Suporte ao cliente com manutenção e atualização de sistemas [cite: 5, 6, 7]
-    * Auxílio no desenvolvimento e implementação de novas tecnologias e ferramentas [cite: 6]
-    * Participação em reuniões de projetos para identificar e analisar requisitos [cite: 7]
+## 🎓 Formação
 
-    ##   Contato
+- **Pós-Graduação** em Desenvolvimento Full Stack - *Universidade Estácio de Sá (2024)*
+- **Graduação** em Análise e Desenvolvimento de Sistemas - *Universidade Estácio de Sá (2024)*
+- **Curso Técnico** em Desenvolvimento de Sistemas - *ETE (2024)*
+- **Curso Profissionalizante** em Desenvolvimento de Software - *Devaria (2023)*
 
-    * **LinkedIn:** [linkedin.com/in/mariorenanofc](linkedin.com/in/mariorenanofc)
-    * **GitHub:** [https://github.com/mariorenanofc](https://github.com/mariorenanofc)
-    * **E-mail:** [MARIOVENDASONLINE10K@GMAIL.COM](mailto:MARIOVENDASONLINE10K@GMAIL.COM)
-    * **Telefone:** (87) 99906-1405
+## 🏃‍♂️ Como Executar
 
-    ##   Autor
+```bash
+# Clone o repositório
+git clone https://github.com/mariorenanofc/portfolio
 
-    Mário Renan
+# Entre no diretório
+cd portfolio
+
+# Instale as dependências
+npm install
+
+# Execute em modo de desenvolvimento
+npm run dev
+
+# Build para produção
+npm run build
+```
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+⭐ **Desenvolvido com dedicação por [Mário Renan](https://github.com/mariorenanofc)**

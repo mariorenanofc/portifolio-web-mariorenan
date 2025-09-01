@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { ThemeToggle } from './ThemeToggle';
 import { LanguageSelector } from './LanguageSelector';
 import { useLanguage } from '@/hooks/useLanguage';
 
@@ -66,14 +65,12 @@ const Navbar = () => {
           </div>
           <div className="flex items-center gap-2 border-l border-border pl-4">
             <LanguageSelector />
-            <ThemeToggle />
           </div>
         </div>
 
         {/* Mobile Navigation Toggle */}
         <div className="md:hidden flex items-center gap-2">
           <LanguageSelector />
-          <ThemeToggle />
           <button 
             className="text-foreground hover:text-primary transition-colors p-1" 
             onClick={toggleMenu}

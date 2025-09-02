@@ -32,6 +32,7 @@ const Footer = () => {
             <a href="#experience" className="hover:text-primary transition-colors">{t('footer.experience')}</a>
             <a href="#services" className="hover:text-primary transition-colors">{t('footer.services')}</a>
             <a href="#projects" className="hover:text-primary transition-colors">{t('footer.projects')}</a>
+            <a href="#certifications" className="hover:text-primary transition-colors">{t('footer.certifications')}</a>
             <a href="#contact" className="hover:text-primary transition-colors">{t('footer.contact')}</a>
           </div>
           

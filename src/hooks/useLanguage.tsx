@@ -18,6 +18,7 @@ const translations = {
     'nav.about': 'Sobre',
     'nav.experience': 'Experiência',
     'nav.projects': 'Projetos',
+    'nav.certifications': 'Certificações',
     'nav.contact': 'Contato',
     
     // Theme
@@ -196,6 +197,14 @@ const translations = {
     'projects.portfolio.title': 'Portfolio Denilson Treinador',
     'projects.portfolio.description': 'Site profissional para personal trainer com foco em transformações corporais.',
 
+    // Certifications
+    'certifications.title': 'Certificações',
+    'certifications.subtitle': 'Certificados e qualificações profissionais que comprovam minha expertise',
+    'certifications.view': 'Visualizar',
+    'certifications.download': 'Baixar',
+    'certifications.openInDrive': 'Abrir no Drive',
+    'certifications.more': 'mais',
+
     // Footer
     'footer.role': 'Desenvolvedor Full Stack',
     'footer.home': 'Início',
@@ -203,6 +212,7 @@ const translations = {
     'footer.experience': 'Experiência',
     'footer.services': 'Serviços',
     'footer.projects': 'Projetos',
+    'footer.certifications': 'Certificações',
     'footer.contact': 'Contato',
     'footer.copyright': 'Todos os direitos reservados.',
     'footer.backToTop': 'Voltar ao topo',
@@ -213,6 +223,7 @@ const translations = {
     'nav.about': 'About',
     'nav.experience': 'Experience',
     'nav.projects': 'Projects',
+    'nav.certifications': 'Certifications',
     'nav.contact': 'Contact',
     
     // Theme
@@ -391,6 +402,14 @@ const translations = {
     'projects.portfolio.title': 'Denilson Trainer Portfolio',
     'projects.portfolio.description': 'Professional website for personal trainer focused on body transformations.',
 
+    // Certifications
+    'certifications.title': 'Certifications',
+    'certifications.subtitle': 'Professional certificates and qualifications that prove my expertise',
+    'certifications.view': 'View',
+    'certifications.download': 'Download',
+    'certifications.openInDrive': 'Open in Drive',
+    'certifications.more': 'more',
+
     // Footer
     'footer.role': 'Full Stack Developer',
     'footer.home': 'Home',
@@ -398,6 +417,7 @@ const translations = {
     'footer.experience': 'Experience',
     'footer.services': 'Services',
     'footer.projects': 'Projects',
+    'footer.certifications': 'Certifications',
     'footer.contact': 'Contact',
     'footer.copyright': 'All rights reserved.',
     'footer.backToTop': 'Back to top',
@@ -408,6 +428,7 @@ const translations = {
     'nav.about': 'Acerca',
     'nav.experience': 'Experiencia',
     'nav.projects': 'Proyectos',
+    'nav.certifications': 'Certificaciones',
     'nav.contact': 'Contacto',
     
     // Theme
@@ -586,6 +607,14 @@ const translations = {
     'projects.portfolio.title': 'Portfolio Denilson Entrenador',
     'projects.portfolio.description': 'Sitio web profesional para entrenador personal enfocado en transformaciones corporales.',
 
+    // Certifications
+    'certifications.title': 'Certificaciones',
+    'certifications.subtitle': 'Certificados y cualificaciones profesionales que demuestran mi experiencia',
+    'certifications.view': 'Ver',
+    'certifications.download': 'Descargar',
+    'certifications.openInDrive': 'Abrir en Drive',
+    'certifications.more': 'más',
+
     // Footer
     'footer.role': 'Desarrollador Full Stack',
     'footer.home': 'Inicio',
@@ -593,6 +622,7 @@ const translations = {
     'footer.experience': 'Experiencia',
     'footer.services': 'Servicios',
     'footer.projects': 'Proyectos',
+    'footer.certifications': 'Certificaciones',
     'footer.contact': 'Contacto',
     'footer.copyright': 'Todos los derechos reservados.',
     'footer.backToTop': 'Volver arriba',

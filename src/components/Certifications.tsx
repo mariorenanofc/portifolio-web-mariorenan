@@ -225,9 +225,7 @@ const Certifications = () => {
                 style={{ height: "500px" }}
               >
                 <iframe
-                  src={getGoogleDrivePreviewUrl(
-                    selectedCertificate?.driveId || ""
-                  )}
+                  src={`https://drive.google.com/file/d/${selectedCertificate?.driveId}/preview`}
                   className="w-full h-full border-0"
                   title={`${selectedCertificate?.title} Certificate Preview`}
                   allow="autoplay"

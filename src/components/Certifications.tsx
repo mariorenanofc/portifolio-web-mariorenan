@@ -102,18 +102,18 @@ const Certifications = () => {
           </p>
         </div>
 
-        {/* Scrollable container with fixed height */}
+        {/* Horizontal scrollable container */}
         <div className="relative">
-          <div className="max-h-[70vh] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent hover:scrollbar-thumb-primary/40 scroll-smooth">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-4">
+          <div className="overflow-x-auto pb-6 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent hover:scrollbar-thumb-primary/40 scroll-smooth">
+            <div className="flex gap-6 w-max">
               {certificates.map((certificate, index) => (
                 <Card
                   key={certificate.id}
-                  className="glass-card hover:scale-105 transition-all duration-500 cursor-pointer animate-slide-up-fade"
+                  className="glass-card hover:scale-105 transition-all duration-500 cursor-pointer animate-slide-up-fade flex-shrink-0 w-80"
                   style={{ animationDelay: `${index * 0.1}s` }}
                   onClick={() => setSelectedCertificate(certificate)}
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 h-full">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
                         <Badge
@@ -124,14 +124,14 @@ const Certifications = () => {
                         >
                           {certificate.type}
                         </Badge>
-                        <h3 className="text-xl font-bold mb-2 text-foreground">
+                        <h3 className="text-xl font-bold mb-2 text-foreground line-clamp-2">
                           {certificate.title}
                         </h3>
                         <p className="text-muted-foreground font-medium">
                           {certificate.issuer}
                         </p>
                       </div>
-                      <Award className="h-8 w-8 text-primary opacity-60" />
+                      <Award className="h-8 w-8 text-primary opacity-60 flex-shrink-0" />
                     </div>
 
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
@@ -141,21 +141,21 @@ const Certifications = () => {
 
                     {certificate.skills && (
                       <div className="flex flex-wrap gap-2 mb-4">
-                        {certificate.skills.slice(0, 3).map((skill) => (
+                        {certificate.skills.slice(0, 2).map((skill) => (
                           <span key={skill} className="tech-tag text-xs">
                             {skill}
                           </span>
                         ))}
-                        {certificate.skills.length > 3 && (
+                        {certificate.skills.length > 2 && (
                           <span className="text-xs text-muted-foreground">
-                            +{certificate.skills.length - 3}{" "}
+                            +{certificate.skills.length - 2}{" "}
                             {t("certifications.more")}
                           </span>
                         )}
                       </div>
                     )}
 
-                    <div className="flex gap-2 mt-4">
+                    <div className="flex gap-2 mt-auto">
                       <Button
                         size="sm"
                         variant="outline"
@@ -191,12 +191,12 @@ const Certifications = () => {
             </div>
           </div>
           
-          {/* Scroll indicator - only show if there are more than 6 certificates */}
-          {certificates.length > 6 && (
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 opacity-50 pointer-events-none">
-              <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                <span>Role para ver mais</span>
-                <div className="w-1 h-1 bg-current rounded-full animate-pulse"></div>
+          {/* Horizontal scroll indicator */}
+          {certificates.length > 3 && (
+            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-60 pointer-events-none">
+              <div className="flex items-center gap-1 text-sm text-muted-foreground bg-background/80 px-3 py-1 rounded-full">
+                <span>Deslize →</span>
+                <div className="w-1.5 h-1.5 bg-current rounded-full animate-pulse"></div>
               </div>
             </div>
           )}

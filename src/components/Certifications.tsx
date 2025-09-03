@@ -65,7 +65,7 @@ const Certifications = () => {
   ];
 
   const getGoogleDrivePreviewUrl = (driveId: string) => {
-    return `https://drive.google.com/file/d/${driveId}/view`;
+    return `https://drive.google.com/file/d/${driveId}/preview`;
   };
 
   const getGoogleDriveDownloadUrl = (driveId: string) => {
@@ -74,6 +74,10 @@ const Certifications = () => {
 
   const getGoogleDriveViewUrl = (driveId: string) => {
     return `https://drive.google.com/file/d/${driveId}/view`;
+  };
+
+  const getGoogleDriveThumbnailUrl = (driveId: string) => {
+    return `https://drive.google.com/thumbnail?id=${driveId}&sz=w400-h300`;
   };
 
   const typeColors: Record<string, string> = {
@@ -91,96 +95,111 @@ const Certifications = () => {
       className="py-20 md:py-24 lg:py-32 relative overflow-hidden floating-orbs"
     >
       <div className="container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="section-title">{t("certifications.title")}</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             {t("certifications.subtitle")}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {certificates.map((certificate, index) => (
-            <Card
-              key={certificate.id}
-              className="glass-card hover:scale-105 transition-all duration-500 cursor-pointer animate-slide-up-fade"
-              style={{ animationDelay: `${index * 0.1}s` }}
-              onClick={() => setSelectedCertificate(certificate)}
-            >
-              <CardContent className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
-                    <Badge
-                      variant="secondary"
-                      className={`mb-3 ${
-                        typeColors[certificate.type] || "bg-muted"
-                      }`}
-                    >
-                      {certificate.type}
-                    </Badge>
-                    <h3 className="text-xl font-bold mb-2 text-foreground">
-                      {certificate.title}
-                    </h3>
-                    <p className="text-muted-foreground font-medium">
-                      {certificate.issuer}
-                    </p>
-                  </div>
-                  <Award className="h-8 w-8 text-primary opacity-60" />
-                </div>
+        {/* Scrollable container with fixed height */}
+        <div className="relative">
+          <div className="max-h-[70vh] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent hover:scrollbar-thumb-primary/40 scroll-smooth">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-4">
+              {certificates.map((certificate, index) => (
+                <Card
+                  key={certificate.id}
+                  className="glass-card hover:scale-105 transition-all duration-500 cursor-pointer animate-slide-up-fade"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                  onClick={() => setSelectedCertificate(certificate)}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1">
+                        <Badge
+                          variant="secondary"
+                          className={`mb-3 ${
+                            typeColors[certificate.type] || "bg-muted"
+                          }`}
+                        >
+                          {certificate.type}
+                        </Badge>
+                        <h3 className="text-xl font-bold mb-2 text-foreground">
+                          {certificate.title}
+                        </h3>
+                        <p className="text-muted-foreground font-medium">
+                          {certificate.issuer}
+                        </p>
+                      </div>
+                      <Award className="h-8 w-8 text-primary opacity-60" />
+                    </div>
 
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                  <Calendar className="h-4 w-4" />
-                  <span>{certificate.date}</span>
-                </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                      <Calendar className="h-4 w-4" />
+                      <span>{certificate.date}</span>
+                    </div>
 
-                {certificate.skills && (
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {certificate.skills.slice(0, 3).map((skill) => (
-                      <span key={skill} className="tech-tag text-xs">
-                        {skill}
-                      </span>
-                    ))}
-                    {certificate.skills.length > 3 && (
-                      <span className="text-xs text-muted-foreground">
-                        +{certificate.skills.length - 3}{" "}
-                        {t("certifications.more")}
-                      </span>
+                    {certificate.skills && (
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {certificate.skills.slice(0, 3).map((skill) => (
+                          <span key={skill} className="tech-tag text-xs">
+                            {skill}
+                          </span>
+                        ))}
+                        {certificate.skills.length > 3 && (
+                          <span className="text-xs text-muted-foreground">
+                            +{certificate.skills.length - 3}{" "}
+                            {t("certifications.more")}
+                          </span>
+                        )}
+                      </div>
                     )}
-                  </div>
-                )}
 
-                <div className="flex gap-2 mt-4">
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="flex-1"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      window.open(
-                        getGoogleDriveViewUrl(certificate.driveId),
-                        "_blank"
-                      );
-                    }}
-                  >
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    {t("certifications.view")}
-                  </Button>
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      window.open(
-                        getGoogleDriveDownloadUrl(certificate.driveId),
-                        "_blank"
-                      );
-                    }}
-                  >
-                    <Download className="h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                    <div className="flex gap-2 mt-4">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="flex-1"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(
+                            getGoogleDriveViewUrl(certificate.driveId),
+                            "_blank"
+                          );
+                        }}
+                      >
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        {t("certifications.view")}
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(
+                            getGoogleDriveDownloadUrl(certificate.driveId),
+                            "_blank"
+                          );
+                        }}
+                      >
+                        <Download className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+          
+          {/* Scroll indicator - only show if there are more than 6 certificates */}
+          {certificates.length > 6 && (
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 opacity-50 pointer-events-none">
+              <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                <span>Role para ver mais</span>
+                <div className="w-1 h-1 bg-current rounded-full animate-pulse"></div>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Certificate Preview Modal */}
@@ -199,11 +218,17 @@ const Certifications = () => {
                     {selectedCertificate?.issuer} • {selectedCertificate?.date}
                   </p>
                 </div>
-                
               </div>
             </DialogHeader>
 
             <div className="px-6 pb-6">
+              <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4 mb-4">
+                <p className="text-sm text-amber-800 dark:text-amber-200">
+                  <strong>Nota:</strong> Para visualizar o certificado, o arquivo deve estar configurado como público no Google Drive. 
+                  Se aparecer "Você precisa ter acesso", clique em "Abrir no Drive" para visualizar.
+                </p>
+              </div>
+
               {selectedCertificate?.description && (
                 <p className="text-muted-foreground mb-4">
                   {selectedCertificate.description}

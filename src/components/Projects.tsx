@@ -22,7 +22,8 @@ const Projects = () => {
       github: "https://github.com/mariorenanofc/fsw-foods",
       live: "http://exudelivery.vercel.app/",
       icon: ShoppingCart,
-      gradient: "from-red-500 to-orange-500"
+      gradient: "from-red-500 to-orange-500",
+      preview: "https://api.screenshotmachine.com/?key=demo&url=http://exudelivery.vercel.app/&dimension=1024x768"
     },
     {
       title: t('projects.finance.title'),
@@ -31,7 +32,8 @@ const Projects = () => {
       github: "https://github.com/mariorenanofc/controle-finance-ai",
       live: "https://controle-finance-ai.vercel.app/login",
       icon: Calculator,
-      gradient: "from-green-500 to-emerald-500"
+      gradient: "from-green-500 to-emerald-500",
+      preview: "https://api.screenshotmachine.com/?key=demo&url=https://controle-finance-ai.vercel.app/login&dimension=1024x768"
     },
     {
       title: t('projects.cardapio.title'),
@@ -40,7 +42,8 @@ const Projects = () => {
       github: "https://github.com/mariorenanofc/cardapio-online",
       live: "https://mariorenanofc.github.io/cardapio-online/index.html",
       icon: BookOpen,
-      gradient: "from-blue-500 to-cyan-500"
+      gradient: "from-blue-500 to-cyan-500",
+      preview: "https://api.screenshotmachine.com/?key=demo&url=https://mariorenanofc.github.io/cardapio-online/index.html&dimension=1024x768"
     },
     {
       title: t('projects.comparador.title'),
@@ -49,7 +52,8 @@ const Projects = () => {
       github: "https://github.com/mariorenanofc/o-esperto-comparador",
       live: "https://preview--o-esperto-comparador.lovable.app/",
       icon: Search,
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "from-purple-500 to-pink-500",
+      preview: "https://api.screenshotmachine.com/?key=demo&url=https://preview--o-esperto-comparador.lovable.app/&dimension=1024x768"
     },
     {
       title: t('projects.portfolio.title'),
@@ -58,7 +62,8 @@ const Projects = () => {
       github: "https://github.com/mariorenanofc/portfolio-denilson",
       live: "http://portifolio-denilson-lima.vercel.app/",
       icon: User,
-      gradient: "from-yellow-500 to-red-500"
+      gradient: "from-yellow-500 to-red-500",
+      preview: "https://api.screenshotmachine.com/?key=demo&url=http://portifolio-denilson-lima.vercel.app/&dimension=1024x768"
     }
   ];
 
@@ -104,58 +109,84 @@ const Projects = () => {
                     {/* Gradient border on hover */}
                     <div className={`absolute -inset-0.5 bg-gradient-to-r ${project.gradient} rounded-xl opacity-0 group-hover:opacity-75 blur transition-all duration-500 group-hover:blur-sm`}></div>
                     
-                    <div className="relative bg-card rounded-xl p-4 md:p-6 h-full flex flex-col">
-                      {/* Icon header with animation */}
-                      <div className="flex items-center justify-between mb-4">
-                        <div className={`p-2 md:p-3 rounded-lg bg-gradient-to-r ${project.gradient} text-white transform transition-all duration-300 ${hoveredProject === index ? 'scale-110 rotate-12' : ''}`}>
-                          <Icon size={20} className="md:w-6 md:h-6" />
+                    <div className="relative bg-card rounded-xl overflow-hidden h-full flex flex-col">
+                      {/* Project Preview Image - Upper Half */}
+                      <div className="relative h-48 md:h-52 overflow-hidden rounded-t-xl">
+                        <img 
+                          src={project.preview} 
+                          alt={`Preview of ${project.title}`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          onError={(e) => {
+                            // Fallback to placeholder if screenshot service fails
+                            e.currentTarget.src = `https://via.placeholder.com/400x300/1f2937/ffffff?text=${encodeURIComponent(project.title)}`;
+                          }}
+                        />
+                        
+                        {/* Overlay with gradient */}
+                        <div className={`absolute inset-0 bg-gradient-to-t ${project.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300`}></div>
+                        
+                        {/* Icon overlay */}
+                        <div className="absolute top-4 right-4">
+                          <div className={`p-2 rounded-lg bg-gradient-to-r ${project.gradient} text-white transform transition-all duration-300 ${hoveredProject === index ? 'scale-110 rotate-12' : ''} shadow-lg`}>
+                            <Icon size={20} className="md:w-6 md:h-6" />
+                          </div>
                         </div>
-                        <div className="text-xs md:text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+
+                        {/* Project number */}
+                        <div className="absolute top-4 left-4 text-xs md:text-sm text-white bg-black/30 backdrop-blur-sm px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           #{index + 1}
                         </div>
                       </div>
 
-                      <h3 className="text-lg md:text-xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                        {project.title}
-                      </h3>
-                      
-                      <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-6 flex-grow leading-relaxed">
-                        {project.description}
-                      </p>
-                      
-                      {/* Tech stack with enhanced styling */}
-                      <div className="flex flex-wrap gap-1 md:gap-2 mb-4 md:mb-6">
-                        {project.tech.map((tech, techIndex) => (
-                          <span 
-                            key={tech} 
-                            className="tech-tag text-xs md:text-sm"
-                            style={{ animationDelay: `${(index * 150) + (techIndex * 50)}ms` }}
+                      {/* Project Content - Lower Half */}
+                      <div className="p-4 md:p-6 flex flex-col flex-grow">
+                        <h3 className="text-lg md:text-xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                          {project.title}
+                        </h3>
+                        
+                        <p className="text-sm md:text-base text-muted-foreground mb-4 flex-grow leading-relaxed line-clamp-3">
+                          {project.description}
+                        </p>
+                        
+                        {/* Tech stack with enhanced styling */}
+                        <div className="flex flex-wrap gap-1 md:gap-2 mb-4">
+                          {project.tech.slice(0, 3).map((tech, techIndex) => (
+                            <span 
+                              key={tech} 
+                              className="tech-tag text-xs"
+                              style={{ animationDelay: `${(index * 150) + (techIndex * 50)}ms` }}
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                          {project.tech.length > 3 && (
+                            <span className="text-xs text-muted-foreground">
+                              +{project.tech.length - 3}
+                            </span>
+                          )}
+                        </div>
+                        
+                        {/* Action buttons with hover effects */}
+                        <div className="flex gap-2 mt-auto">
+                          <a 
+                            href={project.github} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-2 px-3 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm flex-1"
                           >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                      
-                      {/* Action buttons with hover effects */}
-                      <div className="flex flex-col sm:flex-row gap-2 md:gap-4 mt-auto">
-                        <a 
-                          href={project.github} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 px-3 md:px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm md:text-base"
-                        >
-                          <Github size={16} className="md:w-[18px] md:h-[18px] icon-hover" /> 
-                          <span className="font-medium">GitHub</span>
-                        </a>
-                        <a 
-                          href={project.live} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 px-3 md:px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/25 text-sm md:text-base"
-                        >
-                          <ExternalLink size={16} className="md:w-[18px] md:h-[18px] icon-hover" /> 
-                          <span className="font-medium">Demo</span>
-                        </a>
+                            <Github size={16} className="icon-hover" /> 
+                            <span className="font-medium">GitHub</span>
+                          </a>
+                          <a 
+                            href={project.live} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-2 px-3 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/25 text-sm flex-1"
+                          >
+                            <ExternalLink size={16} className="icon-hover" /> 
+                            <span className="font-medium">Demo</span>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>

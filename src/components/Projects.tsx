@@ -23,7 +23,7 @@ const Projects = () => {
       live: "http://exudelivery.vercel.app/",
       icon: ShoppingCart,
       gradient: "from-red-500 to-orange-500",
-      preview: "https://api.screenshotmachine.com/?key=demo&url=http://exudelivery.vercel.app/&dimension=1024x768"
+      preview: `https://api.microlink.io/?url=${encodeURIComponent('http://exudelivery.vercel.app/')}&embed=screenshot.url&meta=false&screenshot.type=webp&screenshot.device=desktop`
     },
     {
       title: t('projects.finance.title'),
@@ -33,7 +33,7 @@ const Projects = () => {
       live: "https://controle-finance-ai.vercel.app/login",
       icon: Calculator,
       gradient: "from-green-500 to-emerald-500",
-      preview: "https://api.screenshotmachine.com/?key=demo&url=https://controle-finance-ai.vercel.app/login&dimension=1024x768"
+      preview: `https://api.microlink.io/?url=${encodeURIComponent('https://controle-finance-ai.vercel.app/login')}&embed=screenshot.url&meta=false&screenshot.type=webp&screenshot.device=desktop`
     },
     {
       title: t('projects.cardapio.title'),
@@ -43,7 +43,7 @@ const Projects = () => {
       live: "https://mariorenanofc.github.io/cardapio-online/index.html",
       icon: BookOpen,
       gradient: "from-blue-500 to-cyan-500",
-      preview: "https://api.screenshotmachine.com/?key=demo&url=https://mariorenanofc.github.io/cardapio-online/index.html&dimension=1024x768"
+      preview: `https://api.microlink.io/?url=${encodeURIComponent('https://mariorenanofc.github.io/cardapio-online/index.html')}&embed=screenshot.url&meta=false&screenshot.type=webp&screenshot.device=desktop`
     },
     {
       title: t('projects.comparador.title'),
@@ -53,7 +53,7 @@ const Projects = () => {
       live: "https://preview--o-esperto-comparador.lovable.app/",
       icon: Search,
       gradient: "from-purple-500 to-pink-500",
-      preview: "https://api.screenshotmachine.com/?key=demo&url=https://preview--o-esperto-comparador.lovable.app/&dimension=1024x768"
+      preview: `https://api.microlink.io/?url=${encodeURIComponent('https://preview--o-esperto-comparador.lovable.app/')}&embed=screenshot.url&meta=false&screenshot.type=webp&screenshot.device=desktop`
     },
     {
       title: t('projects.portfolio.title'),
@@ -63,7 +63,7 @@ const Projects = () => {
       live: "http://portifolio-denilson-lima.vercel.app/",
       icon: User,
       gradient: "from-yellow-500 to-red-500",
-      preview: "https://api.screenshotmachine.com/?key=demo&url=http://portifolio-denilson-lima.vercel.app/&dimension=1024x768"
+      preview: `https://api.microlink.io/?url=${encodeURIComponent('http://portifolio-denilson-lima.vercel.app/')}&embed=screenshot.url&meta=false&screenshot.type=webp&screenshot.device=desktop`
     }
   ];
 

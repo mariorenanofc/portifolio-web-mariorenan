@@ -16,34 +16,14 @@ const Projects = () => {
   
   const projectsList = [
     {
-      title: t('projects.exudelivery.title'),
-      description: t('projects.exudelivery.description'),
-      tech: ["Next.js", "Tailwind CSS", "Lucide", "React", "NextAuth.js"],
-      github: "https://github.com/mariorenanofc/fsw-foods",
-      live: "http://exudelivery.vercel.app/",
-      icon: ShoppingCart,
-      gradient: "from-red-500 to-orange-500",
-      preview: `https://api.microlink.io/?url=${encodeURIComponent('http://exudelivery.vercel.app/')}&embed=screenshot.url&meta=false&screenshot.type=webp&screenshot.device=desktop`
-    },
-    {
-      title: t('projects.finance.title'),
-      description: t('projects.finance.description'),
-      tech: ["Next.js", "React", "Tailwind CSS", "Webpack", "Node.js"], 
-      github: "https://github.com/mariorenanofc/controle-finance-ai",
-      live: "https://controle-finance-ai.vercel.app/login",
-      icon: Calculator,
-      gradient: "from-green-500 to-emerald-500",
-      preview: `https://api.microlink.io/?url=${encodeURIComponent('https://controle-finance-ai.vercel.app/login')}&embed=screenshot.url&meta=false&screenshot.type=webp&screenshot.device=desktop`
-    },
-    {
-      title: t('projects.cardapio.title'),
-      description: t('projects.cardapio.description'),
-      tech: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com/mariorenanofc/cardapio-online",
-      live: "https://mariorenanofc.github.io/cardapio-online/index.html",
-      icon: BookOpen,
-      gradient: "from-blue-500 to-cyan-500",
-      preview: `https://api.microlink.io/?url=${encodeURIComponent('https://mariorenanofc.github.io/cardapio-online/index.html')}&embed=screenshot.url&meta=false&screenshot.type=webp&screenshot.device=desktop`
+      title: t('projects.portfolio.title'),
+      description: t('projects.portfolio.description'),
+      tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+      github: null, // GitHub privado
+      live: "http://portifolio-denilson-lima.vercel.app/",
+      icon: User,
+      gradient: "from-yellow-500 to-red-500",
+      preview: "/projects/portfolio-denilson-preview.png"
     },
     {
       title: t('projects.comparador.title'),
@@ -53,17 +33,37 @@ const Projects = () => {
       live: "https://preview--o-esperto-comparador.lovable.app/",
       icon: Search,
       gradient: "from-purple-500 to-pink-500",
-      preview: `https://api.microlink.io/?url=${encodeURIComponent('https://preview--o-esperto-comparador.lovable.app/')}&embed=screenshot.url&meta=false&screenshot.type=webp&screenshot.device=desktop`
+      preview: "/projects/esperto-comparador-preview.png"
     },
     {
-      title: t('projects.portfolio.title'),
-      description: t('projects.portfolio.description'),
-      tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-      github: "https://github.com/mariorenanofc/portfolio-denilson",
-      live: "http://portifolio-denilson-lima.vercel.app/",
-      icon: User,
-      gradient: "from-yellow-500 to-red-500",
-      preview: `https://api.microlink.io/?url=${encodeURIComponent('http://portifolio-denilson-lima.vercel.app/')}&embed=screenshot.url&meta=false&screenshot.type=webp&screenshot.device=desktop`
+      title: t('projects.cardapio.title'),
+      description: t('projects.cardapio.description'),
+      tech: ["HTML", "CSS", "JavaScript"],
+      github: "https://github.com/mariorenanofc/cardapio-online",
+      live: "https://mariorenanofc.github.io/cardapio-online/index.html",
+      icon: BookOpen,
+      gradient: "from-blue-500 to-cyan-500",
+      preview: "/projects/cardapio-online-preview.png"
+    },
+    {
+      title: t('projects.finance.title'),
+      description: t('projects.finance.description'),
+      tech: ["Next.js", "React", "Tailwind CSS", "Webpack", "Node.js"], 
+      github: "https://github.com/mariorenanofc/controle-finance-ai",
+      live: "https://controle-finance-ai.vercel.app/login",
+      icon: Calculator,
+      gradient: "from-green-500 to-emerald-500",
+      preview: "/projects/finance-ai-preview.png"
+    },
+    {
+      title: t('projects.exudelivery.title'),
+      description: t('projects.exudelivery.description'),
+      tech: ["Next.js", "Tailwind CSS", "Lucide", "React", "NextAuth.js"],
+      github: "https://github.com/mariorenanofc/fsw-foods",
+      live: "http://exudelivery.vercel.app/",
+      icon: ShoppingCart,
+      gradient: "from-red-500 to-orange-500",
+      preview: "/projects/exu-delivery-preview.png"
     }
   ];
 
@@ -168,20 +168,22 @@ const Projects = () => {
                         
                         {/* Action buttons with hover effects */}
                         <div className="flex gap-2 mt-auto">
-                          <a 
-                            href={project.github} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-2 px-3 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm flex-1"
-                          >
-                            <Github size={16} className="icon-hover" /> 
-                            <span className="font-medium">GitHub</span>
-                          </a>
+                          {project.github && (
+                            <a 
+                              href={project.github} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center gap-2 px-3 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm flex-1"
+                            >
+                              <Github size={16} className="icon-hover" /> 
+                              <span className="font-medium">GitHub</span>
+                            </a>
+                          )}
                           <a 
                             href={project.live} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-2 px-3 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/25 text-sm flex-1"
+                            className={`flex items-center justify-center gap-2 px-3 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/25 text-sm ${project.github ? 'flex-1' : 'w-full'}`}
                           >
                             <ExternalLink size={16} className="icon-hover" /> 
                             <span className="font-medium">Demo</span>

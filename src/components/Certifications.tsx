@@ -10,6 +10,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useLanguage } from "@/hooks/useLanguage";
+import { Reveal } from "./Reveal";
 
 interface Certificate {
   id: string;
@@ -95,24 +96,24 @@ const Certifications = () => {
       className="py-20 md:py-24 lg:py-32 relative overflow-hidden floating-orbs"
     >
       <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="section-title">{t("certifications.title")}</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            {t("certifications.subtitle")}
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-12">
+            <h2 className="section-title">{t("certifications.title")}</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              {t("certifications.subtitle")}
+            </p>
+          </div>
+        </Reveal>
 
-        {/* Horizontal scrollable container */}
         <div className="relative">
-          <div className="overflow-x-auto pb-6 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent hover:scrollbar-thumb-primary/40 scroll-smooth">
+          <div className="overflow-x-auto pb-6 snap-x scroll-smooth">
             <div className="flex gap-6 w-max">
               {certificates.map((certificate, index) => (
-                <Card
-                  key={certificate.id}
-                  className="glass-card hover:scale-105 transition-all duration-500 cursor-pointer animate-slide-up-fade flex-shrink-0 w-80"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                  onClick={() => setSelectedCertificate(certificate)}
-                >
+                <Reveal key={certificate.id} delay={index * 150} direction="up">
+                  <Card
+                    className="glass-card hover:scale-105 transition-all duration-500 cursor-pointer flex-shrink-0 w-80 snap-center"
+                    onClick={() => setSelectedCertificate(certificate)}
+                  >
                   <CardContent className="p-6 h-full">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
@@ -186,7 +187,8 @@ const Certifications = () => {
                       </Button>
                     </div>
                   </CardContent>
-                </Card>
+                  </Card>
+                </Reveal>
               ))}
             </div>
           </div>

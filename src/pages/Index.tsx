@@ -11,6 +11,9 @@ import Projects from '@/components/Projects';
 import Certifications from '@/components/Certifications';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import { Reveal } from '@/components/Reveal';
+import { ProgressBar } from '@/components/ProgressBar';
+import { BackToTop } from '@/components/BackToTop';
 
 const Index = () => {
   return (
@@ -20,17 +23,40 @@ const Index = () => {
         <meta name="description" content="Portfólio profissional de Mário Renan, desenvolvedor Full Stack com experiência em NodeJS, React, VueJS e mais." />
       </Helmet>
       
+      <ProgressBar />
+      <BackToTop />
+        
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Technologies />
-      <Experience />
-      <Services />
-      <Projects />
-      <Certifications />
-      <Contact />
-      <Footer />
+      <Reveal>
+        <Hero />
+      </Reveal>
+      <Reveal delay={100}>
+        <About />
+      </Reveal>
+      <Reveal delay={200}>
+        <Skills />
+      </Reveal>
+      <Reveal delay={300}>
+        <Technologies />
+      </Reveal>
+      <Reveal delay={400}>
+        <Experience />
+      </Reveal>
+      <Reveal delay={500}>
+        <Services />
+      </Reveal>
+      <Reveal delay={600}>
+        <Projects />
+      </Reveal>
+      <Reveal delay={700}>
+        <Certifications />
+      </Reveal>
+      <Reveal delay={800}>
+        <Contact />
+      </Reveal>
+      <Reveal delay={900}>
+        <Footer />
+      </Reveal>
     </>
   );
 };

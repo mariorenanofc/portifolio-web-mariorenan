@@ -3,11 +3,13 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { LanguageSelector } from './LanguageSelector';
 import { useLanguage } from '@/hooks/useLanguage';
+import { useScrollSpy } from '@/hooks/useScrollSpy';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { t } = useLanguage();
+  const activeSection = useScrollSpy(['home', 'about', 'skills', 'experience', 'services', 'projects', 'contact']);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,10 +59,16 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-muted-foreground hover:text-primary font-medium transition-colors relative group"
+                className={`transition-colors relative group font-medium ${
+                  activeSection === link.href.substring(1) 
+                    ? 'text-primary' 
+                    : 'text-muted-foreground hover:text-primary'
+                }`}
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  activeSection === link.href.substring(1) ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
               </a>
             ))}
           </div>

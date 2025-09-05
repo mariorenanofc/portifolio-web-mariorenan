@@ -1,6 +1,7 @@
 
 import { Code, Globe, Server } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
+import { Reveal } from '@/components/Reveal';
 
 const Services = () => {
   const { t } = useLanguage();
@@ -26,23 +27,29 @@ const Services = () => {
   return (
     <section id="services" className="bg-background">
       <div className="container">
-        <h2 className="section-title">{t('services.title')}</h2>
+        <Reveal>
+          <h2 className="section-title">{t('services.title')}</h2>
+        </Reveal>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {servicesList.map((service, index) => (
-            <div 
+            <Reveal 
               key={service.title}
-              className="glass-card rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow animate-slide-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              delay={index * 100}
+              direction="up"
             >
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-4">
-                  {service.icon}
+              <div 
+                className="glass-card rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="mb-4">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                  <p className="text-muted-foreground">{service.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

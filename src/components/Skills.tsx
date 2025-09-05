@@ -1,6 +1,7 @@
 
 import { CheckCircle, Code, Lightbulb, Users } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
+import { Reveal } from './Reveal';
 
 const Skills = () => {
   const { t } = useLanguage();
@@ -28,50 +29,42 @@ const Skills = () => {
   return (
     <section id="skills" className="bg-secondary">
       <div className="container">
-        <h2 className="section-title">{t('skills.title')}</h2>
+        <Reveal>
+          <h2 className="section-title">{t('skills.title')}</h2>
+        </Reveal>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {skills.map((skillGroup, index) => {
             const Icon = skillGroup.icon;
             return (
-              <div 
-                key={skillGroup.category}
-                className="group glass-card rounded-xl p-6 shadow-md hover:shadow-2xl transition-all duration-500 animate-scale-in transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                {/* Gradient border effect */}
-                <div className={`absolute -inset-0.5 bg-gradient-to-r ${skillGroup.gradient} rounded-xl opacity-0 group-hover:opacity-75 blur transition-all duration-500`}></div>
-                
-                <div className="relative">
-                  {/* Icon header */}
-                  <div className="flex items-center mb-6">
-                    <div className={`p-3 rounded-lg bg-gradient-to-r ${skillGroup.gradient} text-white mr-4 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300`}>
-                      <Icon size={24} />
-                    </div>
-                    <h3 className="text-xl font-semibold text-primary group-hover:text-foreground transition-colors duration-300">
-                      {skillGroup.category}
-                    </h3>
-                  </div>
+              <Reveal key={skillGroup.category} delay={index * 200} direction="up">
+                <div className="group glass-card rounded-xl p-6 shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden">
+                  <div className={`absolute -inset-0.5 bg-gradient-to-r ${skillGroup.gradient} rounded-xl opacity-0 group-hover:opacity-75 blur transition-all duration-500`}></div>
                   
-                  <ul className="space-y-3">
-                    {skillGroup.items.map((item, itemIndex) => (
-                      <li 
-                        key={item} 
-                        className="flex items-start animate-slide-in-left"
-                        style={{ animationDelay: `${(index * 200) + (itemIndex * 100)}ms` }}
-                      >
-                        <CheckCircle className="text-primary mr-3 flex-shrink-0 mt-1 transform group-hover:scale-110 transition-transform duration-300" size={18} />
-                        <span className="text-foreground group-hover:text-card-foreground transition-colors duration-300 leading-relaxed">
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="relative">
+                    <div className="flex items-center mb-6">
+                      <div className={`p-3 rounded-lg bg-gradient-to-r ${skillGroup.gradient} text-white mr-4 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300`}>
+                        <Icon size={24} />
+                      </div>
+                      <h3 className="text-xl font-semibold text-primary group-hover:text-foreground transition-colors duration-300">
+                        {skillGroup.category}
+                      </h3>
+                    </div>
+                    
+                    <ul className="space-y-3">
+                      {skillGroup.items.map((item, itemIndex) => (
+                        <li key={item} className="flex items-start">
+                          <CheckCircle className="text-primary mr-3 flex-shrink-0 mt-1 transform group-hover:scale-110 transition-transform duration-300" size={18} />
+                          <span className="text-foreground group-hover:text-card-foreground transition-colors duration-300 leading-relaxed">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-
-                {/* Shimmer effect */}
-                <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
+              </Reveal>
             );
           })}
         </div>

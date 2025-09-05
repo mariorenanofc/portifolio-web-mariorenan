@@ -16,6 +16,7 @@ import {
   CarouselPrevious,
 } from "./ui/carousel";
 import { useLanguage } from "@/hooks/useLanguage";
+import { Reveal } from "./Reveal";
 
 const Projects = () => {
   const { t } = useLanguage();
@@ -89,20 +90,19 @@ const Projects = () => {
       </div>
 
       <div className="container relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="section-title animate-slide-up">
-            {t("projects.title")}{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Inovadores
-            </span>
-          </h2>
-          <p
-            className="text-muted-foreground text-lg max-w-2xl mx-auto animate-fade-in"
-            style={{ animationDelay: "200ms" }}
-          >
-            {t("projects.subtitle")}
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-16">
+            <h2 className="section-title">
+              {t("projects.title")}{" "}
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Inovadores
+              </span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              {t("projects.subtitle")}
+            </p>
+          </div>
+        </Reveal>
 
         <Carousel
           opts={{
@@ -119,19 +119,19 @@ const Projects = () => {
                   key={project.title}
                   className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
                 >
-                  <div
-                    className="group relative project-card animate-fade-in h-full"
-                    style={{ animationDelay: `${index * 200}ms` }}
-                    onMouseEnter={() => setHoveredProject(index)}
-                    onMouseLeave={() => setHoveredProject(null)}
-                  >
-                    {/* Shimmer effect */}
-                    <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                    {/* Gradient border on hover */}
+                  <Reveal delay={index * 150} direction="up">
                     <div
-                      className={`absolute -inset-0.5 bg-gradient-to-r ${project.gradient} rounded-xl opacity-0 group-hover:opacity-75 blur transition-all duration-500 group-hover:blur-sm`}
-                    ></div>
+                      className="group relative project-card h-full"
+                      onMouseEnter={() => setHoveredProject(index)}
+                      onMouseLeave={() => setHoveredProject(null)}
+                    >
+                      {/* Shimmer effect */}
+                      <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                      {/* Gradient border on hover */}
+                      <div
+                        className={`absolute -inset-0.5 bg-gradient-to-r ${project.gradient} rounded-xl opacity-0 group-hover:opacity-75 blur transition-all duration-500 group-hover:blur-sm`}
+                      ></div>
 
                     <div className="relative bg-card rounded-xl overflow-hidden h-full flex flex-col">
                       {/* Project Preview Image - Upper Half */}
@@ -186,15 +186,10 @@ const Projects = () => {
 
                         {/* Tech stack with enhanced styling */}
                         <div className="flex flex-wrap gap-1 md:gap-2 mb-4">
-                          {project.tech.slice(0, 3).map((tech, techIndex) => (
+                           {project.tech.slice(0, 3).map((tech, techIndex) => (
                             <span
                               key={tech}
                               className="tech-tag text-xs"
-                              style={{
-                                animationDelay: `${
-                                  index * 150 + techIndex * 50
-                                }ms`,
-                              }}
                             >
                               {tech}
                             </span>
@@ -227,9 +222,10 @@ const Projects = () => {
                             <span className="font-medium">Demo</span>
                           </a>
                         </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Reveal>
                 </CarouselItem>
               );
             })}
@@ -239,19 +235,21 @@ const Projects = () => {
         </Carousel>
 
         {/* Call to action */}
-        <div className="text-center mt-12 md:mt-16">
-          <div className="inline-block p-4 md:p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl backdrop-blur-sm border border-primary/20 animate-glow">
-            <p className="text-base md:text-lg font-medium mb-3 md:mb-4">
-              {t("projects.cta.interested")}
-            </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm md:text-base"
-            >
-              {t("projects.cta.button")}
-            </a>
+        <Reveal delay={800}>
+          <div className="text-center mt-12 md:mt-16">
+            <div className="inline-block p-4 md:p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl backdrop-blur-sm border border-primary/20">
+              <p className="text-base md:text-lg font-medium mb-3 md:mb-4">
+                {t("projects.cta.interested")}
+              </p>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm md:text-base"
+              >
+                {t("projects.cta.button")}
+              </a>
+            </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
